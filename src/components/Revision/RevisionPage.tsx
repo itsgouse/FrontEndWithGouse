@@ -8,6 +8,7 @@ import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import * as Icons from 'lucide-react';
 import Fuse from 'fuse.js';
+import app from '../../App.css'
 
 interface CompletedLesson {
   courseId: string;
@@ -340,8 +341,10 @@ const RevisionPage: React.FC = () => {
         </div>
 
         {/* Tabs */}
+        
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8">
-          <div className="flex border-b border-gray-200 dark:border-gray-700">
+          
+          <div className="flex overflow-x-auto border-b border-gray-200 dark:border-gray-700 no-scrollbar">
             <button
               onClick={() => setActiveTab('completed')}
               className={`flex-1 px-6 py-4 text-sm font-medium transition-colors ${

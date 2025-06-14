@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Monitor, Github, Linkedin, Mail, Globe } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -21,16 +21,16 @@ const Footer: React.FC = () => {
               Learn at your own pace with interactive lessons and quizzes.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://github.com/itsgouse" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a href="https://itsgouse.vercel.app/" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <Globe className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.linkedin.com/in/shaik-gouse-rahiman-460078144/" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="mailto:rahiman2100@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
