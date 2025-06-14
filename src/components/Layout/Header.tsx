@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { Monitor, Menu, X, User, LogOut, BookOpen, Trophy, BarChart3, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { Monitor, Menu, X, User, LogOut, BookOpen, Trophy, BarChart3, Moon, Sun, Code, RotateCcw } from 'lucide-react';
 
 const Header: React.FC = () => {
   const { currentUser, logout } = useAuth();
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -16,11 +17,6 @@ const Header: React.FC = () => {
     } catch (error) {
       console.error('Failed to log out:', error);
     }
-  };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
   };
 
   return (
@@ -56,6 +52,18 @@ const Header: React.FC = () => {
                   Dashboard
                 </Link>
                 <Link 
+                  to="/revision" 
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
+                >
+                  Revision
+                </Link>
+                <Link 
+                  to="/playgrounds" 
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
+                >
+                  Playgrounds
+                </Link>
+                <Link 
                   to="/leaderboard" 
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors font-medium"
                 >
@@ -71,6 +79,7 @@ const Header: React.FC = () => {
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle dark mode"
             >
               {isDarkMode ? (
                 <Sun className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -149,6 +158,22 @@ const Header: React.FC = () => {
                   >
                     <BarChart3 className="w-4 h-4" />
                     <span>Dashboard</span>
+                  </Link>
+                  <Link 
+                    to="/revision" 
+                    className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    <span>Revision</span>
+                  </Link>
+                  <Link 
+                    to="/playgrounds" 
+                    className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Code className="w-4 h-4" />
+                    <span>Playgrounds</span>
                   </Link>
                   <Link 
                     to="/leaderboard" 

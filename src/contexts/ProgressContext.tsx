@@ -125,7 +125,7 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         completedAt: new Date()
       };
 
-      const points = 50; // Points per lesson
+      const points = 10; // Points per lesson (updated from 50 to 10)
       updatedProgress.courses[courseId].totalPoints += points;
       updatedProgress.totalPoints += points;
       updatedProgress.rank = getRankFromPoints(updatedProgress.totalPoints);
@@ -149,7 +149,11 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
 
     const previousScore = updatedProgress.courses[courseId].quizzes[quizId]?.score || 0;
-    const points = Math.max(0, (score * 20) - (previousScore * 20)); // 20 points per correct answer, only add difference
+    const basePoints = 20; // Base points for completing quiz
+    const bonusPoints = score * 5; // 5 points per correct answer
+    const totalQuizPoints = basePoints + bonusPoints;
+    const previousQuizPoints = basePoints + (previousScore * 5);
+    const pointsDifference = totalQuizPoints - previousQuizPoints;
 
     updatedProgress.courses[courseId].quizzes[quizId] = {
       completed: true,
@@ -157,8 +161,8 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       completedAt: new Date()
     };
 
-    updatedProgress.courses[courseId].totalPoints += points;
-    updatedProgress.totalPoints += points;
+    updatedProgress.courses[courseId].totalPoints += pointsDifference;
+    updatedProgress.totalPoints += pointsDifference;
     updatedProgress.rank = getRankFromPoints(updatedProgress.totalPoints);
 
     await updateUserProgress(updatedProgress);

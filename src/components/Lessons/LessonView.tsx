@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Clock, Code } from 'lucide-react';
 import { courses } from '../../data/courses';
 import { useProgress } from '../../contexts/ProgressContext';
 
@@ -44,6 +44,9 @@ const LessonView: React.FC = () => {
     // Auto-scroll to top when lesson changes
     window.scrollTo(0, 0);
   }, [lessonId]);
+
+  // Check if this lesson supports playground
+  const supportsPlayground = ['javascript', 'html', 'css', 'react'].includes(courseId!);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
@@ -100,6 +103,29 @@ const LessonView: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Playground Section */}
+        {supportsPlayground && (
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 mb-8 border border-blue-200 dark:border-blue-800">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Practice What You've Learned
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Try out the concepts from this lesson in an interactive playground
+                </p>
+              </div>
+              <Link
+                to={`/playground/${courseId}`}
+                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <Code className="w-4 h-4 mr-2" />
+                Try in Playground
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Actions */}
         <div className="flex items-center justify-between">
