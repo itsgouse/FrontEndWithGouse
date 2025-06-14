@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Clock, CheckCircle, Search, Calendar, Bookmark, Eye, Filter } from 'lucide-react';
+import { BookOpen, Clock, CheckCircle, Search, Calendar, Bookmark, Eye } from 'lucide-react';
 import { useProgress } from '../../contexts/ProgressContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { courses } from '../../data/courses';
@@ -8,7 +8,7 @@ import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import * as Icons from 'lucide-react';
 import Fuse from 'fuse.js';
-import app from '../../App.css'
+import app from '../../App.css';
 
 interface CompletedLesson {
   courseId: string;

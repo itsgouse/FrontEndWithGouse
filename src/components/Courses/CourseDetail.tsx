@@ -51,7 +51,7 @@ const CourseDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
           <Link
@@ -63,7 +63,7 @@ const CourseDetail: React.FC = () => {
           </Link>
           
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex items-center mb-6">
                 <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center mr-6`}>
                   <IconComponent className="w-8 h-8 text-white" />
@@ -81,7 +81,7 @@ const CourseDetail: React.FC = () => {
               {progressPercentage > 0 && (
                 <button
                   onClick={handleResetProgress}
-                  className="flex items-center px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
+                  className="sm:w-auto flex items-center px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors bg-red-100 mb-6 sm:mb-0"
                 >
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Reset Progress
@@ -132,7 +132,7 @@ const CourseDetail: React.FC = () => {
                   </h2>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                     section.level === 'basic' ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300' :
-                    section.level === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300' :
+                    section.level === 'intermediate' ? 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300' :
                     'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300'
                   }`}>
                     {section.level}
