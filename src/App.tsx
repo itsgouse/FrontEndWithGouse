@@ -18,7 +18,8 @@ import Leaderboard from './components/Leaderboard/Leaderboard';
 import Profile from './components/Profile/Profile';
 import RevisionPage from './components/Revision/RevisionPage';
 import PlaygroundsPage from './components/Playgrounds/PlaygroundsPage';
-import PlaygroundView from './components/Playgrounds/PlaygroundView';
+import WebPlayground from './components/Playgrounds/WebPlayground';
+import ReactPlayground from './components/Playgrounds/ReactPlayground';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -94,10 +95,18 @@ function App() {
                     } 
                   />
                   <Route 
-                    path="/playground/:type/:lessonId?" 
+                    path="/playgrounds/web/:snippetId?" 
                     element={
                       <ProtectedRoute>
-                        <PlaygroundView />
+                        <WebPlayground />
+                      </ProtectedRoute>
+                    } 
+                  />
+                  <Route 
+                    path="/playgrounds/react/:snippetId?" 
+                    element={
+                      <ProtectedRoute>
+                        <ReactPlayground />
                       </ProtectedRoute>
                     } 
                   />
