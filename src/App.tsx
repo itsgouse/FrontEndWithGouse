@@ -19,7 +19,6 @@ import Profile from './components/Profile/Profile';
 import RevisionPage from './components/Revision/RevisionPage';
 import PlaygroundsPage from './components/Playgrounds/PlaygroundsPage';
 import WebPlayground from './components/Playgrounds/WebPlayground';
-import ReactPlayground from './components/Playgrounds/ReactPlayground';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -99,14 +98,6 @@ function App() {
                     element={
                       <ProtectedRoute>
                         <WebPlayground />
-                      </ProtectedRoute>
-                    } 
-                  />
-                  <Route 
-                    path="/playgrounds/react/:snippetId?" 
-                    element={
-                      <ProtectedRoute>
-                        <ReactPlayground />
                       </ProtectedRoute>
                     } 
                   />

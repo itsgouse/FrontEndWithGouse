@@ -23,7 +23,7 @@ const WebPlayground: React.FC = () => {
   
   const [activeTab, setActiveTab] = useState<'html' | 'css' | 'js'>('html');
   const [playground, setPlayground] = useState<WebPlaygroundData>({
-    title: 'New Web Playground',
+    title: 'Name of Playground',
     html: `<!DOCTYPE html>
 <html lang="en">
 <head>

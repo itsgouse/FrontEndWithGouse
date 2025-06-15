@@ -8,9 +8,9 @@ import * as Icons from 'lucide-react';
 const CourseDetail: React.FC = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const { userProgress, resetCourseProgress } = useProgress();
-  
+
   const course = courses.find(c => c.id === courseId);
-  
+
   if (!course) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
@@ -26,7 +26,7 @@ const CourseDetail: React.FC = () => {
 
   const IconComponent = Icons[course.icon as keyof typeof Icons] as React.ComponentType<any>;
   const courseProgress = userProgress?.courses[courseId];
-  
+
   const totalLessons = course.sections.reduce((acc, section) => acc + section.lessons.length, 0);
   const completedLessons = Object.keys(courseProgress?.lessons || {}).length;
   const progressPercentage = Math.round((completedLessons / totalLessons) * 100);
@@ -61,34 +61,40 @@ const CourseDetail: React.FC = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Courses
           </Link>
-          
+
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-              <div className="flex items-center mb-6">
-                <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center mr-6`}>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 sm:gap-8 mb-6">
+              {/* Course Info Section */}
+              <div className="flex items-start">
+                {/* Icon Box */}
+                <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center mr-4 sm:mr-6 shrink-0`}>
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
+
+                {/* Title + Description */}
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                     {course.title}
                   </h1>
-                  <p className="text-gray-600 dark:text-gray-300 text-lg">
+                  <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                     {course.description}
                   </p>
                 </div>
               </div>
-              
+
+              {/* Reset Progress Button (Optional) */}
               {progressPercentage > 0 && (
                 <button
                   onClick={handleResetProgress}
-                  className="sm:w-auto flex items-center px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors bg-red-100 mb-6 sm:mb-0"
+                  className="flex items-center px-4 py-2 text-red-600 dark:text-red-400 bg-red-100 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors self-start sm:self-center"
                 >
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Reset Progress
                 </button>
               )}
             </div>
-            
+
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div className="flex items-center">
                 <BookOpen className="w-5 h-5 text-gray-400 mr-2" />
@@ -103,7 +109,7 @@ const CourseDetail: React.FC = () => {
                 <span className="text-gray-600 dark:text-gray-300">{courseProgress?.totalPoints || 0} points</span>
               </div>
             </div>
-            
+
             {progressPercentage > 0 && (
               <div>
                 <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
@@ -111,7 +117,7 @@ const CourseDetail: React.FC = () => {
                   <span>{progressPercentage}%</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                  <div 
+                  <div
                     className={`h-3 rounded-full ${course.color} transition-all duration-300`}
                     style={{ width: `${progressPercentage}%` }}
                   ></div>
@@ -130,16 +136,15 @@ const CourseDetail: React.FC = () => {
                   <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {section.title}
                   </h2>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    section.level === 'basic' ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300' :
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${section.level === 'basic' ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300' :
                     section.level === 'intermediate' ? 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300' :
-                    'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300'
-                  }`}>
+                      'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300'
+                    }`}>
                     {section.level}
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <div className="space-y-4">
                   {section.lessons.map((lesson) => (
@@ -163,7 +168,7 @@ const CourseDetail: React.FC = () => {
                       </div>
                     </Link>
                   ))}
-                  
+
                   {section.quiz && (
                     <Link
                       to={`/courses/${courseId}/quiz/${section.quiz.id}`}
@@ -181,7 +186,7 @@ const CourseDetail: React.FC = () => {
                           {section.quiz.title}
                         </h3>
                         <p className="text-sm text-blue-600 dark:text-blue-400">
-                          {isQuizCompleted(section.quiz.id) 
+                          {isQuizCompleted(section.quiz.id)
                             ? `Completed - Score: ${getQuizScore(section.quiz.id)}/${section.quiz.questions.length}`
                             : `${section.quiz.questions.length} questions`
                           }
