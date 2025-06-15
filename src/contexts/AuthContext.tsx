@@ -7,7 +7,8 @@ import {
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithPopup,
-  updateProfile
+  updateProfile,
+  sendEmailVerification
 } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase/config';
 
@@ -39,11 +40,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const result = await createUserWithEmailAndPassword(auth, email, password);
     if (result.user) {
       await updateProfile(result.user, { displayName });
+      // Send email verification for email/password signups
+      await sendEmailVerification(result.user);
     }
   };
 
-  const login = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const login = async (email: string, password: string) => {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    
+    // Check if email is verified for email/password logins
+    if (result.user && !result.user.emailVerified) {
+      await signOut(auth);
+      throw new Error('Please verify your email before logging in. Check your inbox for a verification link.');
+    }
+    
+    return result;
   };
 
   const logout = () => {
@@ -55,6 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const loginWithGoogle = () => {
+    // Google accounts are automatically verified, no additional check needed
     return signInWithPopup(auth, googleProvider);
   };
 

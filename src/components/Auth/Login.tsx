@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { Mail, Lock, Eye, EyeOff, Chrome } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Chrome, AlertCircle } from 'lucide-react';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -22,7 +22,11 @@ const Login: React.FC = () => {
       await login(email, password);
       navigate('/dashboard');
     } catch (error: any) {
-      setError('Failed to log in. Please check your credentials.');
+      if (error.message.includes('verify your email')) {
+        setError(error.message);
+      } else {
+        setError('Failed to log in. Please check your credentials.');
+      }
     } finally {
       setLoading(false);
     }
@@ -55,8 +59,9 @@ const Login: React.FC = () => {
           </div>
 
           {error && (
-            <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm">
-              {error}
+            <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm flex items-start">
+              <AlertCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
+              <span>{error}</span>
             </div>
           )}
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { Mail, Lock, User, Eye, EyeOff, Chrome } from 'lucide-react';
+import { Mail, Lock, User, Eye, EyeOff, Chrome, AlertCircle, CheckCircle } from 'lucide-react';
 
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +14,7 @@ const Signup: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const { signup, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
@@ -38,9 +39,15 @@ const Signup: React.FC = () => {
 
     try {
       setError('');
+      setSuccess('');
       setLoading(true);
       await signup(formData.email, formData.password, formData.name);
-      navigate('/dashboard');
+      setSuccess('Account created successfully! Please check your email for a verification link before logging in.');
+      
+      // Redirect to login after showing success message
+      setTimeout(() => {
+        navigate('/login');
+      }, 3000);
     } catch (error: any) {
       setError('Failed to create account. Please try again.');
     } finally {
@@ -75,8 +82,16 @@ const Signup: React.FC = () => {
           </div>
 
           {error && (
-            <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm">
-              {error}
+            <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm flex items-start">
+              <AlertCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
+              <span>{error}</span>
+            </div>
+          )}
+
+          {success && (
+            <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg text-green-700 dark:text-green-400 text-sm flex items-start">
+              <CheckCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
+              <span>{success}</span>
             </div>
           )}
 
