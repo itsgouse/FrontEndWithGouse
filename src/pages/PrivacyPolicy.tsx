@@ -264,7 +264,7 @@ const PrivacyPolicy: React.FC = () => {
                 </p>
                 <div className="space-y-2">
                   <p><strong>Email:</strong> <a href="mailto:rahiman2100@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">rahiman2100@gmail.com</a></p>
-                  <p><strong>Website:</strong> <a href="https://itsgouse.vercel.app" className="text-blue-600 dark:text-blue-400 hover:underline">https://itsgouse.vercel.app</a></p>
+                  <p><strong>Website:</strong> <a href="https://itsgouse.vercel.app" className=\"text-blue-600 dark:text-blue-400 hover:underline">https://itsgouse.vercel.app</a></p>
                   <p><strong>Platform:</strong> FrontendWithGouse Learning Platform</p>
                 </div>
               </div>
