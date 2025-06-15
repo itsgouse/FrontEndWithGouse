@@ -337,11 +337,11 @@ ${playground.js}
         transition={{ duration: 0.4 }}
         className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3"
       >
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center space-x-4 min-w-0 flex-1">
             <button
               onClick={() => navigate('/playgrounds')}
-              className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 flex-shrink-0"
             >
               <ArrowLeft className="w-5 h-5" />
             </button>
@@ -350,49 +350,53 @@ ${playground.js}
               type="text"
               value={playground.title}
               onChange={(e) => setPlayground(prev => ({ ...prev, title: e.target.value }))}
-              className="text-lg font-semibold bg-transparent text-gray-900 dark:text-white border-none outline-none focus:bg-gray-50 dark:focus:bg-gray-700 px-2 py-1 rounded max-w-full"
+              className="text-lg font-semibold bg-transparent text-gray-900 dark:text-white border-none outline-none focus:bg-gray-50 dark:focus:bg-gray-700 px-2 py-1 rounded min-w-0 flex-1"
               placeholder="Playground title..."
             />
             
-            <span className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded flex items-center">
+            <span className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded flex items-center flex-shrink-0">
               <Globe className="w-3 h-3 mr-1" />
               Web
             </span>
           </div>
 
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={runCode}
-              className="flex items-center px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors shadow-sm"
-            >
-              <Play className="w-4 h-4 mr-2" />
-              Run
-            </button>
+          <div className="flex items-center space-x-2 w-full sm:w-auto">
+            <div className="flex space-x-2 flex-1 sm:flex-initial">
+              <button
+                onClick={runCode}
+                className="flex items-center justify-center px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors shadow-sm text-sm flex-1 sm:flex-initial"
+              >
+                <Play className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">Run</span>
+              </button>
+              
+              <button
+                onClick={resetPlayground}
+                className="flex items-center justify-center px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm flex-1 sm:flex-initial"
+              >
+                <RefreshCw className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">Reset</span>
+              </button>
+            </div>
             
-            <button
-              onClick={resetPlayground}
-              className="flex items-center px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-            >
-              <RefreshCw className="w-4 h-4 mr-2" />
-              Reset
-            </button>
-            
-            <button
-              onClick={savePlayground}
-              disabled={saving || !playground.title.trim()}
-              className="flex items-center px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Save className="w-4 h-4 mr-2" />
-              {saving ? 'Saving...' : 'Save'}
-            </button>
-            
-            <button
-              onClick={downloadCode}
-              className="flex items-center px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download
-            </button>
+            <div className="flex space-x-2 flex-1 sm:flex-initial">
+              <button
+                onClick={savePlayground}
+                disabled={saving || !playground.title.trim()}
+                className="flex items-center justify-center px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm flex-1 sm:flex-initial"
+              >
+                <Save className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">{saving ? 'Saving...' : 'Save'}</span>
+              </button>
+              
+              <button
+                onClick={downloadCode}
+                className="flex items-center justify-center px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm flex-1 sm:flex-initial"
+              >
+                <Download className="w-4 h-4 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">Download</span>
+              </button>
+            </div>
           </div>
         </div>
       </motion.div>

@@ -19,6 +19,9 @@ import Profile from './components/Profile/Profile';
 import RevisionPage from './components/Revision/RevisionPage';
 import PlaygroundsPage from './components/Playgrounds/PlaygroundsPage';
 import WebPlayground from './components/Playgrounds/WebPlayground';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Contact from './pages/Contact';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -37,6 +40,9 @@ function App() {
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/courses" element={<CourseList />} />
                   <Route path="/courses/:courseId" element={<CourseDetail />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route 
                     path="/courses/:courseId/lessons/:lessonId" 
                     element={
