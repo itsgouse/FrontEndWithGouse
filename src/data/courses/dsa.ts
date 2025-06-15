@@ -4,7 +4,7 @@ const dsaForFrontendCourse: Course = {
   id: 'dsa-for-frontend',
   title: 'Data Structures & Algorithms for Front-End Developers',
   description: 'A comprehensive Data Structures and Algorithms (DSA) curriculum, tailored for front-end developers, covering core foundations, intermediate structures, and advanced optimization, including resources, quizzes, projects, and example LeetCode questions.',
-  icon: 'code', // Example icon for coding/algorithms
+  icon: 'Code', // Example icon for coding/algorithms
   color: 'bg-green-700', // A suitable color for a tech/learning course
   estimatedHours: 70, // Estimated based on content depth
   totalLessons: 19, // Total lessons across all sections
