@@ -4,7 +4,7 @@ const frontEndSystemDesignCourse: Course = {
   id: 'front-end-system-design',
   title: 'Front-End System Design',
   description: 'A comprehensive curriculum for Front-End System Design, from foundational concepts to advanced architectural patterns and best practices.',
-  icon: 'ComputerDesktop', // Example icon for tech/design
+  icon: 'Code', // Example icon for tech/design
   color: 'bg-indigo-700', // A strong, professional color
   estimatedHours: 60, // Estimated based on content depth
   totalLessons: 31, // Total lessons across all sections
