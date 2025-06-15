@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
     try {
       // Here you would integrate with an email service like EmailJS, Formspree, or your backend
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
+
       setFormData({ name: '', email: '', subject: '', message: '' });
       setStatusMessage({ type: 'success', text: 'Message sent successfully! We\'ll get back to you soon.' });
     } catch (error) {
@@ -89,15 +89,15 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Left Column */}
-          <motion.div 
-            className="space-y-8 p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700" 
+          <motion.div
+            className="space-y-8 p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
             variants={itemVariants}
           >
             <div className='border-b dark:border-gray-700 pb-6'>
@@ -140,25 +140,12 @@ const Contact: React.FC = () => {
               </motion.div>
             ))}
 
-            {/* Additional Info */}
-            <motion.div 
-              className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6"
-              variants={itemVariants}
-            >
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
-                About FrontendWithGouse
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                This platform is my passion project to help aspiring developers master frontend technologies. 
-                Whether you have questions about the courses, suggestions for improvement, or just want to connect, 
-                I'm always excited to hear from fellow developers and learners.
-              </p>
-            </motion.div>
+
           </motion.div>
 
           {/* Right Column */}
-          <motion.div 
-            className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700" 
+          <motion.div
+            className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
             variants={itemVariants}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -166,11 +153,10 @@ const Contact: React.FC = () => {
                 <motion.div key={field.id} variants={itemVariants} className="relative">
                   <label
                     htmlFor={field.id}
-                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${
-                      focusedField === field.id || field.value
-                        ? '-top-2.5 text-xs bg-white dark:bg-gray-800 px-2 text-blue-600 dark:text-blue-400'
-                        : 'top-3 text-sm text-gray-600 dark:text-gray-300'
-                    }`}
+                    className={`absolute left-3 transition-all duration-200 pointer-events-none ${focusedField === field.id || field.value
+                      ? '-top-2.5 text-xs bg-white dark:bg-gray-800 px-2 text-blue-600 dark:text-blue-400'
+                      : 'top-3 text-sm text-gray-600 dark:text-gray-300'
+                      }`}
                   >
                     {field.label}
                   </label>
@@ -191,11 +177,10 @@ const Contact: React.FC = () => {
               <motion.div variants={itemVariants} className="relative">
                 <label
                   htmlFor="message"
-                  className={`absolute left-3 transition-all duration-200 pointer-events-none ${
-                    focusedField === 'message' || formData.message
-                      ? '-top-2.5 text-xs bg-white dark:bg-gray-800 px-2 text-blue-600 dark:text-blue-400'
-                      : 'top-3 text-sm text-gray-600 dark:text-gray-300'
-                  }`}
+                  className={`absolute left-3 transition-all duration-200 pointer-events-none ${focusedField === 'message' || formData.message
+                    ? '-top-2.5 text-xs bg-white dark:bg-gray-800 px-2 text-blue-600 dark:text-blue-400'
+                    : 'top-3 text-sm text-gray-600 dark:text-gray-300'
+                    }`}
                 >
                   Message
                 </label>
@@ -216,11 +201,10 @@ const Contact: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={`p-3 rounded-lg text-sm ${
-                    statusMessage.type === 'success' 
-                      ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-700' 
-                      : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-300 dark:border-red-700'
-                  }`}
+                  className={`p-3 rounded-lg text-sm ${statusMessage.type === 'success'
+                    ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-700'
+                    : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-300 dark:border-red-700'
+                    }`}
                 >
                   {statusMessage.text}
                 </motion.div>
@@ -248,6 +232,23 @@ const Contact: React.FC = () => {
             </form>
           </motion.div>
         </motion.div>
+
+        <motion.div
+          className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 mt-6 shadow-lg border border-gray-200 dark:border-gray-700"
+          variants={itemVariants}
+        >
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+            About FrontendWithGouse
+          </h4>
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            This platform is my passion project to help aspiring developers master frontend technologies.
+            Whether you have questions about the courses, suggestions for improvement, or just want to connect,
+            I'm always excited to hear from fellow developers and learners.
+            <br /><br />
+            Join, learn, and grow — one lesson at a time.
+          </p>
+        </motion.div>
+
       </div>
     </div>
   );

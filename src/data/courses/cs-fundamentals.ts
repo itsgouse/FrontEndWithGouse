@@ -1,4 +1,18 @@
 import { Course } from '../courses'; // Assuming your Course interface is in a file named courses.ts
+import basicLesson1Markdown from '../lessons/cs-fundamentals/basics/lesson-1.md?raw';
+import basicLesson2Markdown from '../lessons/cs-fundamentals/basics/lesson-2.md?raw';
+import basicLesson3Markdown from '../lessons/cs-fundamentals/basics/lesson-3.md?raw';
+import basicLesson4Markdown from '../lessons/cs-fundamentals/basics/lesson-4.md?raw';
+import basicLesson5Markdown from '../lessons/cs-fundamentals/basics/lesson-5.md?raw';
+import basicLesson6Markdown from '../lessons/cs-fundamentals/basics/lesson-6.md?raw';
+import basicLesson7Markdown from '../lessons/cs-fundamentals/basics/lesson-7.md?raw';
+import intermediateLesson1Markdown from '../lessons/cs-fundamentals/intermediate/lesson-1.md?raw';
+import intermediateLesson2Markdown from '../lessons/cs-fundamentals/intermediate/lesson-2.md?raw';
+import intermediateLesson3Markdown from '../lessons/cs-fundamentals/intermediate/lesson-3.md?raw';
+import intermediateLesson4Markdown from '../lessons/cs-fundamentals/intermediate/lesson-4.md?raw';
+import intermediateLesson5Markdown from '../lessons/cs-fundamentals/intermediate/lesson-5.md?raw';
+
+
 
 const csFundamentalsCourse: Course = {
   id: 'cs-fundamentals-frontend',
@@ -15,438 +29,605 @@ const csFundamentalsCourse: Course = {
       level: 'basic',
       lessons: [
         {
-          id: 'basics-lesson-1-general-cs-concepts',
-          title: 'Lesson 1: General CS Concepts',
+          id: 'basics-lesson-1-introduction-to-computer-fundamentals',
+          title: 'Lesson 1: Introduction to Computer Fundamentals',
           duration: '60 min',
-          subtopics: [
-            {
-              title: 'What is a web?',
-              description: 'Explore the fundamental concept of the World Wide Web as a system of interconnected hypertext documents accessed via the Internet.',
-              codeLessons: [],
-            },
-            {
-              title: 'What is the Internet?',
-              description: 'Understand the Internet as a global system of interconnected computer networks that uses the Internet protocol suite (TCP/IP) to communicate between networks and devices.',
-              codeLessons: [],
-            },
-            {
-              title: 'How the Web Works?',
-              description: 'Delve into the basic mechanism of how web browsers retrieve content from web servers over the Internet.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Simplified Web Request Flow',
-                  codeSnippet: `// 1. User types URL
-// 2. Browser resolves DNS to IP
-// 3. Browser sends HTTP Request
-// 4. Server processes request
-// 5. Server sends HTTP Response
-// 6. Browser renders content`,
-                  explanation: 'This high-level overview illustrates the sequence of events from a user initiating a request to content being displayed in the browser.',
-                  imageUrl: 'https://example.com/images/how-web-works.png', // Placeholder for a diagram
-                },
-              ],
-            },
-            {
-              title: 'Client vs Server',
-              description: 'Differentiate between client-side (browser) and server-side (web server) roles in web communication.',
-              codeLessons: [],
-            },
-            {
-              title: 'Lifecycle of an HTTP Request',
-              description: 'Examine the detailed journey of an HTTP request from initiation by the client to the server\'s response.',
-              codeLessons: [],
-            },
-            {
-              title: 'Frontend vs Backend Overview',
-              description: 'Get an introductory understanding of the distinct responsibilities of front-end (user interface) and back-end (data and logic) development.',
-              codeLessons: [],
-            },
-          ],
+          markdownContent: basicLesson1Markdown,
         },
         {
           id: 'basics-lesson-2-web-fundamentals',
           title: 'Lesson 2: Web Fundamentals',
           duration: '75 min',
-          subtopics: [
-            {
-              title: 'Browser Architecture & Rendering Engines (Blink, WebKit)',
-              description: 'Learn about the internal structure of web browsers and the role of rendering engines like Blink (Chrome, Edge) and WebKit (Safari).',
-              codeLessons: [],
-            },
-            {
-              title: 'DNS, IP, and Domain Resolution',
-              description: 'Understand how Domain Name System (DNS) translates human-readable domain names into machine-readable IP addresses.',
-              codeLessons: [
-                {
-                  lessonTitle: 'DNS Lookup Example',
-                  codeSnippet: `// User enters example.com
-// DNS Resolver queries Root DNS server
-// Root DNS server directs to .com TLD server
-// .com TLD server directs to example.com authoritative server
-// Authoritative server provides IP address (e.g., 192.0.2.1)`,
-                  explanation: 'This simplified flow demonstrates the steps involved in a DNS lookup to resolve a domain name to an IP address.',
-                  imageUrl: 'https://example.com/images/dns-lookup.png', // Placeholder for a DNS diagram
-                },
-              ],
-            },
-            {
-              title: 'URL Anatomy',
-              description: 'Deconstruct a URL into its various components: protocol, hostname, port, path, query parameters, and hash fragment.',
-              codeLessons: [],
-            },
-            {
-              title: 'HTTP vs HTTPS',
-              description: 'Compare HTTP (Hypertext Transfer Protocol) with HTTPS (HTTP Secure) and understand the importance of SSL/TLS for secure communication.',
-              codeLessons: [],
-            },
-            {
-              title: 'Request-Response Cycle',
-              description: 'Reinforce the fundamental interaction pattern where a client sends a request and a server sends a response.',
-              codeLessons: [],
-            },
-          ],
+          markdownContent: basicLesson2Markdown,
         },
         {
           id: 'basics-lesson-3-html-css-js-runtime',
           title: 'Lesson 3: HTML/CSS/JS Runtime',
           duration: '90 min',
-          subtopics: [
-            {
-              title: 'DOM & DOM Tree',
-              description: 'Explore the Document Object Model (DOM) as a programming interface for web documents and its representation as a tree structure.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Basic DOM Manipulation',
-                  codeSnippet: `// HTML: <div id="myElement">Hello</div>
-const myElement = document.getElementById('myElement');
-myElement.textContent = 'Hello, DOM!';
-myElement.style.color = 'blue';`,
-                  explanation: 'This example shows how JavaScript interacts with the DOM to change text content and style of an HTML element.',
-                  imageUrl: 'https://example.com/images/dom-tree.png', // Placeholder for DOM tree visual
-                },
-              ],
-            },
-            {
-              title: 'CSSOM',
-              description: 'Understand the CSS Object Model (CSSOM) and how it\'s constructed by the browser to apply styles to the DOM.',
-              codeLessons: [],
-            },
-            {
-              title: 'JavaScript Runtime Environment',
-              description: 'Learn about the environment where JavaScript code executes, including the JavaScript engine (like V8) and browser APIs.',
-              codeLessons: [],
-            },
-            {
-              title: 'Call Stack, Event Loop',
-              description: 'Dive into the core concurrency model of JavaScript, explaining the Call Stack for synchronous execution and the Event Loop for handling asynchronous operations.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Event Loop Example',
-                  codeSnippet: `console.log('Start');
+          markdownContent: basicLesson3Markdown,
 
-setTimeout(() => {
-  console.log('Timeout callback');
-}, 0);
-
-Promise.resolve().then(() => {
-  console.log('Promise resolved');
-});
-
-console.log('End');
-// Expected output (roughly):
-// Start
-// End
-// Promise resolved
-// Timeout callback`,
-                  explanation: 'This snippet demonstrates the non-blocking nature of JavaScript and the order of execution for synchronous code, microtasks (Promises), and macrotasks (setTimeout) facilitated by the Event Loop.',
-                  imageUrl: 'https://example.com/images/event-loop.png', // Placeholder for Event Loop diagram
-                },
-              ],
-            },
-            {
-              title: 'Microtasks & Macrotasks',
-              description: 'Distinguish between microtasks (like Promises, MutationObserver) and macrotasks (like setTimeout, setInterval, I/O) and their priority in the Event Loop.',
-              codeLessons: [],
-            },
-          ],
         },
         {
           id: 'basics-lesson-4-protocols-apis',
           title: 'Lesson 4: Protocols & APIs',
           duration: '60 min',
-          subtopics: [
-            {
-              title: 'HTTP Methods (GET, POST, etc.)',
-              description: 'Learn the common HTTP request methods (verbs) and their semantic meaning for interacting with web resources.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Using Fetch API with GET and POST',
-                  codeSnippet: `// GET Request
-fetch('/api/data')
-  .then(response => response.json())
-  .then(data => console.log(data));
-
-// POST Request
-fetch('/api/users', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ name: 'John Doe', email: 'john@example.com' }),
-})
-.then(response => response.json())
-.then(data => console.log(data));`,
-                  explanation: 'These examples illustrate how to make GET and POST requests using the `fetch` API, specifying the method and sending JSON data for POST.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-            {
-              title: 'Status Codes',
-              description: 'Understand the meaning of various HTTP status codes (e.g., 200 OK, 404 Not Found, 500 Internal Server Error) and their importance for debugging.',
-              codeLessons: [],
-            },
-            {
-              title: 'Headers & Cookies',
-              description: 'Explore the role of HTTP headers in requests and responses, and how cookies are used for state management and tracking.',
-              codeLessons: [],
-            },
-            {
-              title: 'RESTful APIs & JSON format',
-              description: 'Introduction to REST (Representational State Transfer) architectural style for web services and the ubiquitous JSON (JavaScript Object Notation) data format.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Sample JSON Data',
-                  codeSnippet: `{
-  "id": 1,
-  "name": "Alice",
-  "email": "alice@example.com",
-  "isActive": true,
-  "roles": ["user", "admin"]
-}`,
-                  explanation: 'This is a typical example of data represented in JSON format, widely used for data exchange in web APIs.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-          ],
+          markdownContent: basicLesson4Markdown,
         },
         {
           id: 'basics-lesson-5-application-models',
           title: 'Lesson 5: Application Models',
           duration: '45 min',
-          subtopics: [
-            {
-              title: 'Static Sites vs Web Applications',
-              description: 'Differentiate between static websites (content served as-is) and dynamic web applications (interactive and data-driven).',
-              codeLessons: [],
-            },
-            {
-              title: 'What are SPAs?',
-              description: 'Understand Single Page Applications (SPAs) where content is dynamically loaded, providing a fluid user experience without full page reloads.',
-              codeLessons: [],
-            },
-            {
-              title: 'MPA vs SPA Trade-offs',
-              description: 'Compare the advantages and disadvantages of Multi-Page Applications (MPAs) versus Single Page Applications (SPAs).',
-              codeLessons: [],
-            },
-          ],
+          markdownContent: basicLesson5Markdown,
         },
         {
-          id: 'basics-lesson-6-local-storage',
-          title: 'Lesson 6: Local Storage',
-          duration: '45 min',
-          subtopics: [
-            {
-              title: 'Cookies: Usage and Limitations',
-              description: 'Learn about HTTP cookies, their role in session management, and their size and security limitations.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Setting and Getting a Cookie',
-                  codeSnippet: `// Setting a cookie
-document.cookie = "username=John Doe; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
-
-// Getting all cookies
-console.log(document.cookie); // "username=John Doe; ..."`
-                  ,
-                  explanation: 'This shows how to set a simple cookie with an expiration date and path, and how to access all cookies for the current document.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-            {
-              title: 'localStorage vs sessionStorage',
-              description: 'Compare and contrast `localStorage` (persistent storage) and `sessionStorage` (session-based storage) in the browser.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Using localStorage and sessionStorage',
-                  codeSnippet: `// localStorage
-localStorage.setItem('username', 'Alice');
-const username = localStorage.getItem('username');
-console.log(username); // Alice
-localStorage.removeItem('username');
-
-// sessionStorage
-sessionStorage.setItem('tempData', 'Some session-specific info');
-const tempData = sessionStorage.getItem('tempData');
-console.log(tempData); // Some session-specific info
-sessionStorage.clear();`,
-                  explanation: 'Demonstrates basic `setItem`, `getItem`, and `removeItem`/`clear` operations for both `localStorage` and `sessionStorage`.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-            {
-              title: 'Basic Caching Mechanisms',
-              description: 'Understand simple client-side caching concepts to improve web performance.',
-              codeLessons: [],
-            },
-          ],
-        },
-        {
-          id: 'basics-lesson-7-basic-testing',
+          id: 'basics-lesson-6-basic-testing',
           title: 'Lesson 7: Basic Testing',
           duration: '60 min',
-          subtopics: [
-            {
-              title: 'What is Unit Testing?',
-              description: 'Introduction to unit testing, focusing on testing individual, isolated units of code (e.g., functions, components).',
-              codeLessons: [],
-            },
-            {
-              title: 'Test Pyramid',
-              description: 'Learn about the testing pyramid concept, emphasizing a large base of unit tests, fewer integration tests, and even fewer end-to-end tests.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Test Pyramid Visualization',
-                  codeSnippet: `// No direct code, refers to a diagram
-// See image for Test Pyramid structure (Unit > Integration > E2E)`,
-                  explanation: 'This subtopic explains the concept of the Test Pyramid for structuring software tests effectively.',
-                  imageUrl: 'https://example.com/images/test-pyramid.png', // Placeholder for Test Pyramid image
-                },
-              ],
-            },
-            {
-              title: 'Introduction to Jest (or Vitest)',
-              description: 'Get started with a popular JavaScript testing framework like Jest or Vitest for writing unit tests.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Simple Jest Test Example',
-                  codeSnippet: `// sum.js
-function sum(a, b) {
-  return a + b;
-}
-export default sum;
-
-// sum.test.js
-import sum from './sum';
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
-
-test('adds 0 + 0 to equal 0', () => {
-  expect(sum(0, 0)).toBe(0);
-});`,
-                  explanation: 'This simple example demonstrates how to write a basic unit test using Jest to verify the functionality of a `sum` function.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-          ],
+          markdownContent: basicLesson6Markdown,
         },
         {
-          id: 'basics-lesson-8-git-version-control',
-          title: 'Lesson 8: Git & Version Control',
+          id: 'basics-lesson-7-git-version-control',
+          title: 'Lesson 7: Git & Version Control',
           duration: '90 min',
-          subtopics: [
-            {
-              title: 'Git Basics: init, clone, add, commit',
-              description: 'Learn the fundamental Git commands for initializing a repository, cloning, staging changes, and committing them.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Basic Git Commands',
-                  codeSnippet: `git init          // Initialize a new Git repository
-git clone <url>   // Clone an existing repository
-git add .         // Stage all changes
-git commit -m "Initial commit" // Commit staged changes`,
-                  explanation: 'Essential Git commands to start and manage a local repository.',
-                  imageUrl: '🎓',
-                },
-              ],
-            },
-            {
-              title: 'Branching, Merging',
-              description: 'Understand the concept of Git branches for parallel development and how to merge changes back into a main branch.',
-              codeLessons: [
-                {
-                  lessonTitle: 'Git Branching and Merging',
-                  codeSnippet: `git branch new-feature     // Create a new branch
-git checkout new-feature   // Switch to the new branch
-// ... make changes ...
-git add .
-git commit -m "Implement new feature"
-git checkout main          // Switch back to main
-git merge new-feature      // Merge new-feature into main`,
-                  explanation: 'Illustrates the typical workflow of creating a branch, working on it, and then merging it back into the main development line.',
-                  imageUrl: 'https://example.com/images/git-branching.png', // Placeholder for Git branching diagram
-                },
-              ],
-            },
-            {
-              title: 'GitHub Workflow: Fork, PR, Issues',
-              description: 'Learn about common collaborative workflows on platforms like GitHub, including forking repositories, creating Pull Requests, and managing issues.',
-              codeLessons: [],
-            },
-          ],
+          markdownContent: basicLesson7Markdown,
         },
       ],
       quiz: {
-        id: 'basics-quiz-1',
-        title: 'Quiz 1: Web Fundamentals',
+        id: "computer-web-fundamentals-quiz-1",
+        title: "Quiz: Computer & Web Fundamentals",
         questions: [
           {
-            id: 'q1-1',
-            question: 'Which protocol is primarily used by web browsers to request and display web pages?',
-            options: ['FTP', 'SMTP', 'HTTP', 'TCP'],
-            correctAnswer: 2, // HTTP
-          },
-          {
-            id: 'q1-2',
-            question: 'What does DNS stand for?',
-            options: ['Domain Naming Service', 'Dynamic Network System', 'Data Node Server', 'Domain Name System'],
-            correctAnswer: 3, // Domain Name System
-          },
-          {
-            id: 'q1-3',
-            question: 'Which of the following is NOT a core component of the JavaScript Runtime Environment in a browser?',
-            options: ['Call Stack', 'Web APIs', 'Event Loop', 'Database Server'],
-            correctAnswer: 3, // Database Server
-          },
-          {
-            id: 'q1-4',
-            question: 'Which HTTP method is typically used to retrieve data from a server?',
-            options: ['POST', 'PUT', 'GET', 'DELETE'],
-            correctAnswer: 2, // GET
-          },
-          {
-            id: 'q1-5',
-            question: 'What is the main difference between `localStorage` and `sessionStorage`?',
+            id: "q1-1",
+            question: "Which of the following best describes the primary characteristic of a 'static site'?",
             options: [
-              '`localStorage` stores data only for the current session, `sessionStorage` stores it persistently.',
-              '`localStorage` stores data persistently, `sessionStorage` stores it only for the current session.',
-              'There is no difference; they are interchangeable.',
-              '`localStorage` is for server-side storage, `sessionStorage` is for client-side.',
+              "Content is generated dynamically by server-side code for each user.",
+              "Content is pre-built and served as-is, looking the same for all visitors.",
+              "It uses a database to store user-specific information.",
+              "It heavily relies on client-side JavaScript to fetch new content without full page reloads."
             ],
-            correctAnswer: 1, // localStorage persistent, sessionStorage session-based
+            correctAnswer: 1
           },
-          // ... (add 20 more MCQs as per your requirement)
-        ],
-      },
-      // You mentioned Quiz 2 for Lesson 2, but then a single Quiz 1 for the whole section.
-      // I've put one quiz at the section level, which is a common practice.
-      // If you need per-lesson quizzes, the structure would need a quiz object within each lesson.
+          {
+            id: "q1-2",
+            question: "A Single Page Application (SPA) primarily relies on which technology to update content without full page reloads?",
+            options: [
+              "Server-side rendering (SSR)",
+              "Traditional multi-page navigation",
+              "JavaScript and API calls",
+              "XML stylesheets (XSLT)"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-3",
+            question: "What is a major disadvantage of a Multi-Page Application (MPA) compared to an SPA?",
+            options: [
+              "Better SEO 'out of the box'.",
+              "Slower user experience due to full page reloads.",
+              "More complex to develop for basic websites.",
+              "Less susceptible to memory leaks."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-4",
+            question: "Which of these is NOT considered an advantage of computers?",
+            options: [
+              "Speed and Efficiency",
+              "Accuracy",
+              "Job Displacement",
+              "Storage Capacity"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-5",
+            question: "In the context of computer memory, what is the primary characteristic of RAM (Random Access Memory)?",
+            options: [
+              "It retains data even when the computer is off.",
+              "It is used for long-term storage of the operating system.",
+              "It is volatile, meaning its contents are lost when power is off.",
+              "It is significantly slower than secondary storage like HDDs."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-6",
+            question: "Which of the following is an example of an 'input device'?",
+            options: [
+              "Monitor",
+              "Printer",
+              "Speaker",
+              "Microphone"
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: "q1-7",
+            question: "What is the correct order from smallest to largest for these data storage units?",
+            options: [
+              "Bit, Byte, Kilobyte, Megabyte",
+              "Byte, Bit, Kilobyte, Megabyte",
+              "Megabyte, Kilobyte, Byte, Bit",
+              "Kilobyte, Megabyte, Byte, Bit"
+            ],
+            correctAnswer: 0
+          },
+          {
+            id: "q1-8",
+            question: "What is the main function of an Operating System (OS)?",
+            options: [
+              "To provide entertainment through games and media.",
+              "To translate human language into machine code.",
+              "To manage computer hardware and software resources.",
+              "To design user interfaces for applications."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-9",
+            question: "Which layer of the Test Pyramid should have the *most* tests, characterized by being fast and isolated?",
+            options: [
+              "End-to-End (E2E) Tests",
+              "Integration Tests",
+              "Unit Tests",
+              "Manual Tests"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-10",
+            question: "In Git, what is the purpose of the `git add .` command?",
+            options: [
+              "To initialize a new Git repository.",
+              "To commit all changes to the repository history.",
+              "To stage all changes in the current directory for the next commit.",
+              "To clone an existing repository from a remote server."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-11",
+            question: "What is the primary benefit of using Git branches?",
+            options: [
+              "To automatically merge all code changes without conflicts.",
+              "To store a single, linear history of the project.",
+              "To allow developers to work on features in isolation without affecting the main codebase.",
+              "To track changes to individual files without recording them in a repository."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-12",
+            question: "What does creating a 'Pull Request' (PR) on GitHub primarily facilitate?",
+            options: [
+              "Directly merging your code into the main branch without review.",
+              "Downloading a copy of a repository to your local machine.",
+              "Proposing your changes for review and potential integration into the original repository.",
+              "Creating an exact duplicate of a repository under your own account."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-13",
+            question: `Which HTML attribute is used to provide additional information about an element and is written as name=\"value\" within the opening tag?`,
+            options: [
+              "Tag",
+              "Element",
+              "Attribute",
+              "Property"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-14",
+            question: "In CSS, what is `#my-id` an example of?",
+            options: [
+              "An element selector",
+              "A class selector",
+              "An ID selector",
+              "A pseudo-class selector"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-15",
+            question: "What is the DOM (Document Object Model) in the context of JavaScript?",
+            options: [
+              "A programming language used for web backend development.",
+              "A database for storing web page content.",
+              "A programming interface that represents the structure of an HTML document as a tree of objects.",
+              "A network protocol for transferring web pages."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-16",
+            question: "Which of the following is typically a backend programming language?",
+            options: [
+              "HTML",
+              "CSS",
+              "JavaScript (running in browser)",
+              "Python"
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: "q1-17",
+            question: "Which of these is a key characteristic that distinguishes Web Applications from Static Sites?",
+            options: [
+              "They are always faster to load.",
+              "They handle complex server-side logic and interact with databases.",
+              "They do not require an internet connection.",
+              "Their content cannot be updated after deployment."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-18",
+            question: "What is the primary reason why SPAs often provide a more 'fluid user experience' than MPAs?",
+            options: [
+              "They load all content at once, including images and videos.",
+              "They avoid full page reloads by dynamically updating content via JavaScript.",
+              "They do not use HTTP requests.",
+              "They store all data directly on the client's machine."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-19",
+            question: "A major disadvantage of SPAs, especially for initial load, can be related to:",
+            options: [
+              "Lack of interactivity.",
+              "Difficult client-side routing.",
+              "Slower initial download of JavaScript and CSS bundles.",
+              "Inability to connect to APIs."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-20",
+            question: "Which type of computer memory is volatile and stores data and programs the CPU is actively using?",
+            options: [
+              "Hard Disk Drive (HDD)",
+              "Solid State Drive (SSD)",
+              "RAM (Random Access Memory)",
+              "Optical Storage (CD/DVD)"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-21",
+            question: "What is the primary difference between an HDD and an SSD?",
+            options: [
+              "HDDs are faster and more durable than SSDs.",
+              "SSDs use spinning platters, while HDDs use flash memory.",
+              "HDDs are generally cheaper per gigabyte but slower; SSDs are faster but more expensive.",
+              "HDDs are volatile, while SSDs are non-volatile."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-22",
+            question: "Which function of an Operating System ensures that multiple programs can run concurrently?",
+            options: [
+              "File Management",
+              "Device Management",
+              "Process Management",
+              "Security"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-23",
+            question: "What is the fundamental difference between the 'Internet' and the 'World Wide Web' (WWW)?",
+            options: [
+              "They are interchangeable terms for the same thing.",
+              "The Internet is a global system of interconnected networks; the Web is a system of interconnected documents accessible via the Internet.",
+              "The Web is the hardware; the Internet is the software.",
+              "The Internet is solely for communication; the Web is solely for data storage."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-24",
+            question: "In the simplified web request flow, what happens immediately after the user types a URL and presses Enter?",
+            options: [
+              "The browser directly sends an HTTP request to the web server.",
+              "The server processes the request and sends an HTTP response.",
+              "The browser resolves the domain name to an IP address via DNS.",
+              "The browser renders the content on the screen."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-25",
+            question: "During the Lifecycle of an HTTP Request, what is the purpose of the 'TCP Handshake'?",
+            options: [
+              "To translate the domain name to an IP address.",
+              "To establish a reliable connection between the browser and the web server.",
+              "To send the HTTP request message.",
+              "To render the web page content."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-26",
+            question: "Which of these is NOT typically a responsibility of the 'Frontend' (Client-Side) in web development?",
+            options: [
+              "Handling user interaction (clicks, typing).",
+              "Rendering and displaying content.",
+              "Managing data storage in a database.",
+              "Running client-side JavaScript."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-27",
+            question: "When styling HTML, what does `p { color: blue; }` signify in CSS?",
+            options: [
+              "It sets the background color of paragraphs to blue.",
+              "It selects the first paragraph element only.",
+              "It sets the text color of all paragraph elements to blue.",
+              "It creates a new paragraph element with blue text."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-28",
+            question: "What is the role of JavaScript's 'Event Handling' in a web page?",
+            options: [
+              "To define the static structure of the page.",
+              "To set the visual styles and layout.",
+              "To respond to user actions and other occurrences in the browser.",
+              "To store persistent data on the server."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-29",
+            question: "In an HTML document, what does the `<!DOCTYPE html>` declaration signify?",
+            options: [
+              "It defines the document's title.",
+              "It specifies the character encoding.",
+              "It declares the document type and HTML version.",
+              "It links to an external stylesheet."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-30",
+            question: "Which CSS property is commonly used to remove the underline from hyperlinks?",
+            options: [
+              "`font-decoration`",
+              "`text-style`",
+              "`text-decoration`",
+              "`link-underline`"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-31",
+            question: "What is `document.getElementById('my-id')` primarily used for in JavaScript?",
+            options: [
+              "To create a new HTML element with the given ID.",
+              "To get an element from the HTML document by its unique ID.",
+              "To set the ID of an existing HTML element.",
+              "To remove an element with the given ID from the document."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-32",
+            question: "Which Node.js framework is explicitly mentioned for simplifying the process of building web applications and APIs?",
+            options: [
+              "React",
+              "Angular",
+              "Express.js",
+              "Django"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-33",
+            question: "When a frontend sends data to a backend API using the `POST` method, where is the data typically included in the HTTP request?",
+            options: [
+              "In the URL path (as parameters).",
+              "In the request headers.",
+              "In the request body.",
+              "In the status line."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-34",
+            question: "Which of these is a key characteristic of SQL (Relational) Databases?",
+            options: [
+              "They store data in flexible, schema-less documents.",
+              "They are designed for horizontal scalability with dynamic schemas.",
+              "They use structured tables with predefined schemas and relationships.",
+              "They are primarily used for key-value storage."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-35",
+            question: "What is the main advantage of NoSQL databases compared to SQL databases?",
+            options: [
+              "Strong emphasis on ACID properties for transactional integrity.",
+              "Better for complex queries involving multiple table joins.",
+              "Easier horizontal scalability and flexible schemas.",
+              "More mature and standardized query language."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-36",
+            question: "A 'unit' in unit testing refers to the smallest testable part of an application, which should ideally be:",
+            options: [
+              "The entire application.",
+              "A complete user workflow.",
+              "An individual, isolated function or component.",
+              "The interaction between multiple systems."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-37",
+            question: "Which testing principle emphasizes having many fast, isolated tests at the bottom layer?",
+            options: [
+              "Agile Testing Quadrant",
+              "Waterfall Testing Model",
+              "Test Pyramid",
+              "V-Model Testing"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-38",
+            question: "What is the purpose of `expect(result).toBe(3)` in a Jest unit test?",
+            options: [
+              "To define a new function named 'result'.",
+              "To assert that the 'result' variable is exactly equal to 3.",
+              "To set the 'result' variable to 3.",
+              "To create a mock function that returns 3."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-39",
+            question: `What does "git commit -m \"Message\" do?`,
+            options: [
+              "It adds files to the staging area.",
+              "It creates a new branch.",
+              "It permanently records staged changes into the repository's history with a message.",
+              "It sends local commits to a remote repository."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-40",
+            question: "If you are on the `main` branch and you run `git merge feature-branch`, what is the outcome?",
+            options: [
+              "The `feature-branch` is deleted.",
+              "Changes from `main` are integrated into `feature-branch`.",
+              "Changes from `feature-branch` are integrated into `main`.",
+              "A new repository named `feature-branch` is created."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-41",
+            question: "Which of these is a disadvantage of over-reliance on computers?",
+            options: [
+              "Increased efficiency",
+              "Improved communication",
+              "Decline in certain human skills",
+              "Greater access to information"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-42",
+            question: "What is the primary role of the 'Server' in the client-server model of the web?",
+            options: [
+              "To display web pages to the user.",
+              "To initiate requests to client browsers.",
+              "To store and deliver web content in response to client requests.",
+              "To run frontend JavaScript code."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-43",
+            question: "Which part of the HTTP request message contains additional information like user-agent and accepted content types?",
+            options: [
+              "Request Line",
+              "Request Headers",
+              "Request Body",
+              "Status Line"
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-44",
+            question: "The process where the browser combines the DOM and CSSOM to create the render tree is part of which step in the HTTP request lifecycle?",
+            options: [
+              "DNS Resolution",
+              "TCP Handshake",
+              "Server Processing",
+              "Browser Rendering"
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: "q1-45",
+            question: "What is the purpose of `event.preventDefault()` in JavaScript event handling?",
+            options: [
+              "To stop the event from propagating to parent elements.",
+              "To prevent the browser's default action for that event.",
+              "To halt the execution of all other JavaScript on the page.",
+              "To clear all event listeners from an element."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-46",
+            question: "Which of the following is an example of an 'Output Device'?",
+            options: [
+              "Scanner",
+              "Mouse",
+              "Projector",
+              "Joystick"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q1-47",
+            question: "What kind of database would typically be chosen for a highly interconnected dataset like a social network's user relationships?",
+            options: [
+              "Key-Value Store",
+              "Document Database",
+              "Relational (SQL) Database",
+              "Graph Database"
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: "q1-48",
+            question: "What is a 'living documentation' benefit of Unit Testing?",
+            options: [
+              "It automatically generates user manuals.",
+              "It serves as a form of documentation showing how a function is intended to be used.",
+              "It creates an online Wiki for the project.",
+              "It helps in designing the database schema."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q1-49",
+            question: "You want to add a unique identifier to an HTML element for specific styling or JavaScript access. Which attribute would you use?",
+            options: [
+              "`class`",
+              "`src`",
+              "`href`",
+              "`id`"
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: "q1-50",
+            question: "What is the primary advantage of using `Node.js` for backend development, especially for a JavaScript developer?",
+            options: [
+              "It offers better performance than all other backend languages.",
+              "It allows using JavaScript for both frontend and backend (full-stack JavaScript).",
+              "It eliminates the need for databases.",
+              "It is a visual drag-and-drop backend builder."
+            ],
+            correctAnswer: 1
+          }
+        ]
+      }
     },
     {
       id: 'section-medium',
@@ -1096,6 +1277,50 @@ if ('serviceWorker' in navigator) {
           title: 'Lesson 12: Browser Storage',
           duration: '45 min',
           subtopics: [
+            {
+              title: 'Cookies: Usage and Limitations',
+              description: 'Learn about HTTP cookies, their role in session management, and their size and security limitations.',
+              codeLessons: [
+                {
+                  lessonTitle: 'Setting and Getting a Cookie',
+                  codeSnippet: `// Setting a cookie
+document.cookie = "username=John Doe; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+
+// Getting all cookies
+console.log(document.cookie); // "username=John Doe; ..."`
+                  ,
+                  explanation: 'This shows how to set a simple cookie with an expiration date and path, and how to access all cookies for the current document.',
+                  imageUrl: '🎓',
+                },
+              ],
+            },
+            {
+              title: 'localStorage vs sessionStorage',
+              description: 'Compare and contrast `localStorage` (persistent storage) and `sessionStorage` (session-based storage) in the browser.',
+              codeLessons: [
+                {
+                  lessonTitle: 'Using localStorage and sessionStorage',
+                  codeSnippet: `// localStorage
+localStorage.setItem('username', 'Alice');
+const username = localStorage.getItem('username');
+console.log(username); // Alice
+localStorage.removeItem('username');
+
+// sessionStorage
+sessionStorage.setItem('tempData', 'Some session-specific info');
+const tempData = sessionStorage.getItem('tempData');
+console.log(tempData); // Some session-specific info
+sessionStorage.clear();`,
+                  explanation: 'Demonstrates basic `setItem`, `getItem`, and `removeItem`/`clear` operations for both `localStorage` and `sessionStorage`.',
+                  imageUrl: '🎓',
+                },
+              ],
+            },
+            {
+              title: 'Basic Caching Mechanisms',
+              description: 'Understand simple client-side caching concepts to improve web performance.',
+              codeLessons: [],
+            },
             {
               title: 'IndexedDB Basics',
               description: 'Introduction to IndexedDB, a low-level API for client-side storage of significant amounts of structured data, including files/blobs.',

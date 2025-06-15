@@ -354,10 +354,6 @@ ${playground.js}
               placeholder="Playground title..."
             />
             
-            <span className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded flex items-center flex-shrink-0">
-              <Globe className="w-3 h-3 mr-1" />
-              Web
-            </span>
           </div>
 
           <div className="flex items-center space-x-2 w-full sm:w-auto">
