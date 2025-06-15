@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Monitor, Github, Linkedin, Mail, Globe } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -41,24 +42,24 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/courses" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/courses" className="text-gray-400 hover:text-white transition-colors">
                   All Courses
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/dashboard" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/dashboard" className="text-gray-400 hover:text-white transition-colors">
                   Dashboard
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/leaderboard" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/leaderboard" className="text-gray-400 hover:text-white transition-colors">
                   Leaderboard
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/profile" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/profile" className="text-gray-400 hover:text-white transition-colors">
                   Profile
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,24 +69,24 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Popular Courses</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/courses/html" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/courses/html" className="text-gray-400 hover:text-white transition-colors">
                   HTML Fundamentals
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/courses/css" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/courses/css" className="text-gray-400 hover:text-white transition-colors">
                   CSS Styling
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/courses/javascript" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/courses/javascript" className="text-gray-400 hover:text-white transition-colors">
                   JavaScript
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/courses/react" className="text-gray-400 hover:text-white transition-colors">
+                <Link to="/courses/react" className="text-gray-400 hover:text-white transition-colors">
                   React Development
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -96,15 +97,15 @@ const Footer: React.FC = () => {
             © 2025 FrontendWithGouse. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            </Link>
+            <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
