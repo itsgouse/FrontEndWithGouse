@@ -82,7 +82,7 @@ const CodeBlock: React.FC<{ node: any; inline: boolean; className: string; child
 
     return !inline && match ? (
         <div className="relative rounded-md my-4 shadow-md overflow-hidden" style={codeStyle}>
-            <div className="flex justify-end p-2 bg-gray-700 bg-opacity-60 absolute top-0 right-0 w-full z-10">
+            <div className="flex justify-end p-1 bg-gray-700 bg-opacity-60 absolute top-0 right-0 w-full z-10">
                 <span className="text-sm text-gray-400 mr-auto ml-2 font-mono uppercase">{lang}</span>
                 <CopyToClipboardButton code={codeContent} />
             </div>
