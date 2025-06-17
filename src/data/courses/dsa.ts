@@ -3,21 +3,19 @@ import { Course } from '../courses'; // Assuming your Course interface is in a f
 import dsaBasicLesson1Markdown from '../lessons/dsa/basics/lesson-1.md?raw';
 import dsaBasicLesson2Markdown from '../lessons/dsa/basics/lesson-2.md?raw';
 import dsaBasicLesson3Markdown from '../lessons/dsa/basics/lesson-3.md?raw';
-// import dsaLesson4Markdown from '../lessons/dsa-for-frontend/basics/lesson-4.md?raw';
-// import dsaLesson5Markdown from '../lessons/dsa-for-frontend/basics/lesson-5.md?raw';
-// import dsaLesson6Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-1.md?raw';
-// import dsaLesson7Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-2.md?raw';
-// import dsaLesson8Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-3.md?raw';
-// import dsaLesson9Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-4.md?raw';
-// import dsaLesson10Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-5.md?raw';
-// import dsaLesson11Markdown from '../lessons/dsa-for-frontend/intermediate/lesson-16.md?raw';
-// import dsaLesson12Markdown from '../lessons/dsa-for-frontend/advanced/lesson-1.md?raw';
-// import dsaLesson13Markdown from '../lessons/dsa-for-frontend/advanced/lesson-2.md?raw';
-// import dsaLesson14Markdown from '../lessons/dsa-for-frontend/advanced/lesson-.md?raw';
-// import dsaLesson15Markdown from '../lessons/dsa-for-frontend/advanced/lesson-15.md?raw';
-// import dsaLesson16Markdown from '../lessons/dsa-for-frontend/advanced/lesson-16.md?raw';
-// import dsaLesson17Markdown from '../lessons/dsa-for-frontend/advanced/lesson-17.md?raw';
-// import dsaLesson18Markdown from '../lessons/dsa-for-frontend/advanced/lesson-18.md?raw';
+import dsaBasicLesson4Markdown from '../lessons/dsa/basics/lesson-4.md?raw';
+import dsaBasicLesson5Markdown from '../lessons/dsa/basics/lesson-5.md?raw';
+import dsaIntermediateLesson1Markdown from '../lessons/dsa/intermediate/lesson-1.md?raw';
+import dsaIntermediateLesson2Markdown from '../lessons/dsa/intermediate/lesson-2.md?raw';
+import dsaIntermediateLesson3Markdown from '../lessons/dsa/intermediate/lesson-3.md?raw';
+import dsaIntermediateLesson4Markdown from '../lessons/dsa/intermediate/lesson-4.md?raw';
+import dsaIntermediateLesson5Markdown from '../lessons/dsa/intermediate/lesson-5.md?raw';
+import dsaIntermediateLesson6Markdown from '../lessons/dsa/intermediate/lesson-6.md?raw';
+import dsaAdvancedLesson1Markdown from '../lessons/dsa/advanced/lesson-1.md?raw'; 
+import dsaAdvancedLesson2Markdown from '../lessons/dsa/advanced/lesson-2.md?raw'; 
+import dsaAdvancedLesson3Markdown from '../lessons/dsa/advanced/lesson-3.md?raw'; 
+import dsaAdvancedLesson4Markdown from '../lessons/dsa/advanced/lesson-4.md?raw'; 
+import dsaAdvancedLesson5Markdown from '../lessons/dsa/advanced/lesson-5.md?raw'; 
 
 
 const dsaForFrontendCourse: Course = {
@@ -26,353 +24,371 @@ const dsaForFrontendCourse: Course = {
   description: 'A comprehensive Data Structures and Algorithms (DSA) curriculum, tailored for front-end developers, covering core foundations, intermediate structures, and advanced optimization, including resources, quizzes, projects, and example LeetCode questions.',
   icon: 'Code',
   color: 'bg-green-700',
-  estimatedHours: 70,
-  totalLessons: 18,
+  estimatedHours: 400, 
+  totalLessons: 20, 
   sections: [
     {
-      id: 'section-1-basics-dsa',
-      title: 'Section 1: Basics (Core Foundations & Efficiency)',
+      id: 'section-1-fundamentals',
+      title: 'Section 1: Core Fundamentals & Efficiency',
       level: 'basic',
       lessons: [
         {
-          id: 'dsa-lesson-1-intro-math',
-          title: 'Math Fundamentals',
+          id: 'dsa-lesson-1-math-basics',
+          title: 'Math Fundamentals for DSA',
           duration: '180 min',
           markdownContent: dsaBasicLesson1Markdown,
         },
         {
-          id: 'dsa-lesson-2-javascipt',
-          title: 'JavaScript Fundamentals',
+          id: 'dsa-lesson-2-js-essentials',
+          title: 'JavaScript Essentials for Algorithms',
           duration: '120 min',
           markdownContent: dsaBasicLesson2Markdown,
         },
         {
-          id: 'dsa-lesson-3-bigO',
-          title: 'Big O and Efficiency',
-          duration: '60 min',
+          id: 'dsa-lesson-3-big-o',
+          title: 'Understanding Big O Notation & Efficiency',
+          duration: '90 min', 
           markdownContent: dsaBasicLesson3Markdown,
         },
         {
-          id: 'dsa-lesson-4-hashmaps-sets',
-          title: 'Hash Maps (Objects in JS) & Sets',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-4-array-string-basics',
+          title: 'Basic Array & String Operations',
+          duration: '90 min', 
+          markdownContent: dsaBasicLesson4Markdown,
         },
         {
-          id: 'dsa-lesson-5-sorting-searching-basic',
-          title: 'Sorting & Searching (Basic)',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-5-sorting-searching-intro',
+          title: 'Introduction to Sorting & Searching Algorithms',
+          duration: '240 min', 
+          markdownContent: dsaBasicLesson5Markdown,
         },
       ],
       quiz: {
-        id: 'section-1-dsa-quiz',
-        title: 'Quiz: Core Foundations & Efficiency',
+        id: 'section-1-fundamentals-quiz',
+        title: 'Quiz: Core Fundamentals & Efficiency',
         questions: [
           {
-            "id": "q1-factorial-trailing-zeros",
-            "question": "How many trailing zeros are there in 26! (26 factorial)?",
-            "options": [
+            id: "q1-factorial-trailing-zeros",
+            question: "How many trailing zeros are there in 26! (26 factorial)?",
+            options: [
               "4",
               "5",
               "6",
               "7"
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
           },
           {
-            "id": "q2-fibonacci-recursion-efficiency",
-            "question": "Which of the following describes the most significant issue with a naive recursive implementation of the Fibonacci sequence (e.g., `fib(n) = fib(n-1) + fib(n-2)`)?",
-            "options": [
+            id: "q2-fibonacci-recursion-efficiency",
+            question: "Which of the following describes the most significant issue with a naive recursive implementation of the Fibonacci sequence (e.g., `fib(n) = fib(n-1) + fib(n-2)`)?",
+            options: [
               "It uses too much memory (stack overflow) for large 'n'.",
               "It performs redundant calculations, leading to exponential time complexity.",
               "It cannot handle negative numbers.",
               "It is always slower than an iterative solution regardless of 'n'."
             ],
-            "correctAnswer": 1
+            correctAnswer: 1
           },
           {
-            "id": "q3-prime-optimization",
-            "question": "When checking if a number 'n' is prime, why is it sufficient to check for divisibility only up to `sqrt(n)`?",
-            "options": [
-              "Because numbers larger than `sqrt(n)` cannot be divisors.",
-              "Because any factor larger than `sqrt(n)` must have a corresponding factor smaller than `sqrt(n)`.",
+            id: "q3-prime-optimization",
+            question: "When checking if a number 'n' is prime, why is it sufficient to check for divisibility only up to $\\sqrt{n}$?",
+            options: [
+              "Because numbers larger than $\\sqrt{n}$ cannot be divisors.",
+              "Because any factor larger than $\\sqrt{n}$ must have a corresponding factor smaller than $\\sqrt{n}$.",
               "It reduces the space complexity.",
               "It's a mathematical approximation, not a strict rule."
             ],
-            "correctAnswer": 1
+            correctAnswer: 1
           },
           {
-            "id": "q4-modulo-cyclic-array",
-            "question": "You have an array `arr` of length `L`. To move to the 'next' element in a circular fashion (after the last element, you go back to the first), which expression correctly calculates the next index from `currentIndex`?",
-            "options": [
-              "(currentIndex + 1) % L - 1",
-              "currentIndex + 1 % L",
-              "(currentIndex + 1) % L",
-              "L % (currentIndex + 1)"
+            id: "q4-javascript-variable-declaration",
+            question: "What is the primary difference between `let`, `const`, and `var` in JavaScript for variable declaration?",
+            options: [
+              "`var` is block-scoped, while `let` and `const` are function-scoped.",
+              "`let` and `const` allow re-declaration, while `var` does not.",
+              "`const` variables can be re-assigned, while `let` cannot.",
+              "`var` is function-scoped, while `let` and `const` are block-scoped. `const` also prevents re-assignment."
             ],
-            "correctAnswer": 2
+            correctAnswer: 3
           },
           {
-            "id": "q5-swap-arithmetic-limitation",
-            "question": "What is a major limitation of using the arithmetic swapping method (`a = a + b; b = a - b; a = a - b;`) compared to using a temporary variable?",
-            "options": [
-              "It only works in JavaScript.",
-              "It is generally slower due to more operations.",
-              "It can lead to overflow issues with very large numbers.",
-              "It does not work if one of the numbers is zero."
+            id: "q5-javascript-hoisting",
+            question: "Which of the following best describes 'hoisting' in JavaScript?",
+            options: [
+              "Moving variable declarations to the bottom of their scope during compilation.",
+              "Moving function expressions to the top of their scope during compilation.",
+              "Moving declarations (variables and functions) to the top of their scope during compilation.",
+              "A type of error that occurs when variables are used before they are declared."
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
           },
           {
-            "id": "q6-palindrome-string-handling",
-            "question": "When checking if a phrase like 'A man, a plan, a canal: Panama' is a palindrome, what pre-processing step is crucial?",
-            "options": [
-              "Converting it to an array of characters.",
-              "Reversing the string first.",
-              "Removing spaces and punctuation, and converting to a consistent case.",
-              "Checking only the first and last characters."
+            id: "q6-javascript-closure",
+            question: "What is a 'closure' in JavaScript?",
+            options: [
+              "A way to prevent external access to variables.",
+              "A function that returns another function.",
+              "A function bundled together with references to its surrounding state (lexical environment).",
+              "A way to stop the execution of a function."
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
           },
           {
-            "id": "q7-gp-sum-condition",
-            "question": "The formula for the sum of the first 'n' terms of a Geometric Progression ($S_n = \frac{a_1 \times (r^n - 1)}{r-1}$) has a specific condition. What is it?",
-            "options": [
-              "r must be positive.",
-              "n must be an even number.",
-              "r cannot be equal to 1.",
-              "a_1 cannot be zero."
+            id: "q7-big-o-notation-best-case",
+            question: "Big O notation describes the asymptotic behavior of an algorithm. What does $O(N)$ typically represent?",
+            options: [
+              "The best-case scenario.",
+              "The average-case scenario.",
+              "The upper bound (worst-case scenario) for the algorithm's growth rate.",
+              "The exact time an algorithm will take to execute."
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
           },
           {
-            "id": "q8-gcd-lcm-relationship",
-            "question": "Given two positive integers 'a' and 'b', which relationship between GCD and LCM is always true?",
-            "options": [
-              "GCD(a, b) + LCM(a, b) = a + b",
-              "GCD(a, b) * LCM(a, b) = a * b",
-              "LCM(a, b) % GCD(a, b) != 0",
-              "GCD(a, b) - LCM(a, b) = 0"
+            id: "q8-big-o-constant-time",
+            question: "Which Big O notation represents an algorithm whose execution time remains constant regardless of the input size?",
+            options: [
+              "$O(N)$",
+              "$O(\\log N)$",
+              "$O(1)$",
+              "$O(N^2)$"
             ],
-            "correctAnswer": 1
+            correctAnswer: 2
           },
           {
-            "id": "q9-array-sum-loop-choice",
-            "question": "You need to sum all elements in an array. Which type of loop is generally most readable and common for this task when you know the array's length?",
-            "options": [
-              "A `while` loop with an external counter.",
-              "A `for...in` loop.",
-              "A `do...while` loop.",
-              "A `for` loop with an index (e.g., `for (let i=0; i<arr.length; i++)`)."
+            id: "q9-big-o-common-example",
+            question: "A linear search algorithm has a time complexity of:",
+            options: [
+              "$O(1)$",
+              "$O(\\log N)$",
+              "$O(N)$",
+              "$O(N^2)$"
             ],
-            "correctAnswer": 3
+            correctAnswer: 2
           },
           {
-            "id": "q10-random-integer-range",
-            "question": "To generate a random integer between 1 (inclusive) and 100 (inclusive) in JavaScript, which expression is correct?",
-            "options": [
-              "`Math.floor(Math.random() * 100)`",
-              "`Math.ceil(Math.random() * 100)`",
-              "`Math.floor(Math.random() * 100) + 1`",
-              "`Math.round(Math.random() * 99) + 1`"
+            id: "q10-array-access-time",
+            question: "What is the time complexity for accessing an element by its index in a static array?",
+            options: [
+              "$O(1)$",
+              "$O(N)$",
+              "$O(\\log N)$",
+              "$O(N^2)$"
             ],
-            "correctAnswer": 2
-          }, {
-            "id": "q1-even-check",
-            "question": "What does the function `isEven(8)` return in JavaScript?",
-            "options": ["true", "false", "null", "undefined"],
-            "correctAnswer": 0
+            correctAnswer: 0
           },
           {
-            "id": "q2-prime-check",
-            "question": "What will `isPrime(7)` return based on the given function?",
-            "options": ["true", "false", "undefined", "TypeError"],
-            "correctAnswer": 0
-          },
-          {
-            "id": "q3-math-abs",
-            "question": "What is the output of `Math.abs(-12)`?",
-            "options": ["-12", "12", "0", "undefined"],
-            "correctAnswer": 1
-          },
-          {
-            "id": "q4-math-round",
-            "question": "What does `Math.round(4.6)` return?",
-            "options": ["4", "5", "6", "NaN"],
-            "correctAnswer": 1
-          },
-          {
-            "id": "q5-precedence",
-            "question": "What is the output of `10 + 2 * 3` in JavaScript?",
-            "options": ["36", "16", "30", "60"],
-            "correctAnswer": 1
-          },
-          {
-            "id": "q6-logical-operator",
-            "question": "What does `true && false || true` evaluate to?",
-            "options": ["true", "false", "undefined", "null"],
-            "correctAnswer": 0
-          },
-          {
-            "id": "q7-modulo-cycle",
-            "question": "Given `let index = (3 + 1) % 3;`, what is `index`?",
-            "options": ["0", "1", "2", "3"],
-            "correctAnswer": 1
-          },
-          {
-            "id": "q8-factorial-function",
-            "question": "What is the output of `factorial(4)` using the given function?",
-            "options": ["10", "12", "24", "16"],
-            "correctAnswer": 2
-          },
-          {
-            "id": "q9-palindrome-check",
-            "question": "What does `isStringPalindrome('madam')` return?",
-            "options": ["true", "false", "undefined", "TypeError"],
-            "correctAnswer": 0
-          },
-          {
-            "id": "q10-swap-values",
-            "question": "What are the values of `x` and `y` after `[x, y] = [y, x]` if `x = 3, y = 5`?",
-            "options": ["x=5, y=3", "x=3, y=5", "x=8, y=0", "Error"],
-            "correctAnswer": 0
-          },
-          {
-            "id": "ae-q1-big-o-definition",
-            "question": "Big O notation primarily describes which aspect of an algorithm?",
-            "options": [
-              "The exact execution time in milliseconds.",
-              "The number of lines of code.",
-              "How its running time or space requirements grow as the input size grows.",
-              "The memory usage for small inputs only."
+            id: "q11-linked-list-insertion-middle",
+            question: "What is the worst-case time complexity for inserting an element in the middle of a singly linked list (assuming you have a pointer to the previous node)?",
+            options: [
+              "$O(1)$",
+              "$O(N)$",
+              "$O(\\log N)$",
+              "$O(N^2)$"
             ],
-            "correctAnswer": 2
+            correctAnswer: 0
           },
           {
-            "id": "ae-q2-best-complexity",
-            "question": "Which Big O complexity represents the most efficient growth rate (fastest performance for large inputs)?",
-            "options": [
-              "O(n^2)",
-              "O(log n)",
-              "O(n)",
-              "O(2^n)"
+            id: "q12-stack-data-structure",
+            question: "Which fundamental data structure operates on a Last-In, First-Out (LIFO) principle?",
+            options: [
+              "Queue",
+              "Stack",
+              "Array",
+              "Linked List"
             ],
-            "correctAnswer": 1
+            correctAnswer: 1
           },
           {
-            "id": "ae-q3-code-complexity-new",
-            "question": "Consider an algorithm that sorts a list of 'N' items by comparing each item to every other item in the list using nested loops. What is its typical Big O time complexity?",
-            "options": [
-              "O(n)",
-              "O(n log n)",
-              "O(n^2)",
-              "O(1)"
+            id: "q13-queue-data-structure",
+            question: "Which fundamental data structure operates on a First-In, First-Out (FIFO) principle?",
+            options: [
+              "Stack",
+              "Queue",
+              "Tree",
+              "Hash Table"
             ],
-            "correctAnswer": 2
+            correctAnswer: 1
           },
           {
-            "id": "ae-q4-space-complexity-example",
-            "question": "An algorithm that creates a new array of the same size as its input array to store processed results would typically have which space complexity?",
-            "options": [
-              "O(1)",
-              "O(log n)",
-              "O(n)",
-              "O(n^2)"
+            id: "q14-hash-table-average-case",
+            question: "What is the average-case time complexity for searching an element in a well-implemented hash table?",
+            options: [
+              "$O(N)$",
+              "$O(\\log N)$",
+              "$O(1)$",
+              "$O(N^2)$"
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
           },
           {
-            "id": "ae-q5-frontend-performance-reason",
-            "question": "From a frontend developer's perspective, why is algorithmic performance critical?",
-            "options": [
-              "It directly impacts backend server costs.",
-              "It determines the size of the JavaScript bundle.",
-              "It significantly affects user experience and conversion rates.",
-              "It ensures strict type checking in JavaScript."
+            id: "q15-algorithm-definition",
+            question: "What is the best definition of an 'algorithm'?",
+            options: [
+              "A piece of code written in a specific programming language.",
+              "A set of data structures used to store information.",
+              "A step-by-step procedure for solving a computational problem.",
+              "A graphical representation of program flow."
             ],
-            "correctAnswer": 2
+            correctAnswer: 2
+          },
+          {
+            id: "q16-sorting-algorithm-purpose",
+            question: "The primary goal of a sorting algorithm is to:",
+            options: [
+              "Find the largest element in a collection.",
+              "Arrange elements of a list in a specific order (e.g., ascending or descending).",
+              "Remove duplicate elements from a list.",
+              "Search for a specific element efficiently."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q17-searching-algorithm-purpose",
+            question: "The primary goal of a searching algorithm is to:",
+            options: [
+              "Arrange elements in a specific order.",
+              "Insert new elements into a data structure.",
+              "Determine if a specific element exists within a collection and, if so, its location.",
+              "Delete elements from a collection."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q18-recursion-definition",
+            question: "What is 'recursion' in the context of algorithms?",
+            options: [
+              "A loop that repeats a block of code a fixed number of times.",
+              "A function that calls itself to solve a smaller instance of the same problem.",
+              "A technique for optimizing memory usage.",
+              "A method for parallelizing computations."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q19-iterative-vs-recursive",
+            question: "Compared to an iterative solution, a recursive solution often involves:",
+            options: [
+              "Less memory usage.",
+              "More explicit control over iteration.",
+              "A higher chance of stack overflow for deep recursion.",
+              "Simpler debugging."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q20-time-complexity-definition",
+            question: "What does 'time complexity' in algorithm analysis primarily measure?",
+            options: [
+              "The amount of memory an algorithm uses.",
+              "The number of lines of code in an algorithm.",
+              "The amount of time an algorithm takes to complete as a function of its input size.",
+              "The difficulty of implementing an algorithm."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q21-space-complexity-definition",
+            question: "What does 'space complexity' in algorithm analysis primarily measure?",
+            options: [
+              "The number of operations an algorithm performs.",
+              "The amount of memory an algorithm requires to run as a function of its input size.",
+              "The time it takes to execute an algorithm.",
+              "The readability of an algorithm's code."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q22-logarithmic-complexity-example",
+            question: "Which of the following algorithms typically exhibits logarithmic time complexity ($O(\\log N)$)?",
+            options: [
+              "Iterating through an array.",
+              "Searching in an unsorted linked list.",
+              "Binary search on a sorted array.",
+              "Bubble Sort."
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q23-quadratic-complexity-example",
+            question: "Which of the following sorting algorithms typically exhibits quadratic time complexity ($O(N^2)$) in its worst-case scenario?",
+            options: [
+              "Merge Sort",
+              "Quick Sort",
+              "Insertion Sort",
+              "Heap Sort"
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: "q24-modular-arithmetic-purpose",
+            question: "In mathematics, what is the primary purpose of 'modular arithmetic'?",
+            options: [
+              "To perform complex number calculations.",
+              "To deal with remainders of division and cyclic patterns.",
+              "To approximate continuous functions.",
+              "To solve linear equations."
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: "q25-javascript-truthy-falsy",
+            question: "In JavaScript, which of the following values is considered 'falsy'?",
+            options: [
+              "`true`",
+              "`1`",
+              "`'hello'`",
+              "`0`"
+            ],
+            correctAnswer: 3
           }
-
         ]
       },
-      projects: [
-        {
-          id: 'dsa-project-1-sum-n',
-          title: 'Project 1: Sum of N Numbers Complexity Analysis',
-          description: 'Implement a function that calculates the sum of numbers from 1 to N using two different approaches (e.g., a for loop and a mathematical formula) and discuss their Big O complexities.',
-          checkpoint: 'Accurately estimate the time and space complexity of basic algorithms.',
-        },
-        {
-          id: 'dsa-project-2-task-manager',
-          title: 'Project 2: Array-Based Task Manager',
-          description: 'Build a "Task Manager" where tasks are stored in an array. Implement functionalities to add a task, remove a task by index, and mark a task as complete (updating a property).',
-          checkpoint: 'Implement common array manipulations using built-in JS methods and manual loops, comparing their efficiency.',
-        },
-        {
-          id: 'dsa-project-3-text-analyzer',
-          title: 'Project 3: Simple Text Analyzer',
-          description: 'Create a simple "Text Analyzer" that takes a string input and reports the number of words, characters, and unique characters.',
-          checkpoint: 'Write a function to check if a string is a palindrome (ignoring case and non-alphanumeric characters).',
-        },
-        {
-          id: 'dsa-project-4-unique-visitor-tracker',
-          title: 'Project 4: Unique Visitor Tracker',
-          description: 'Build a "Unique Visitor Tracker" that uses a Set to store unique IP addresses (simulated) visiting a page and counts the total unique visitors.',
-          checkpoint: 'Use a Hash Map to count the frequency of characters in a string.',
-        },
-        {
-          id: 'dsa-project-5-search-autocomplete',
-          title: 'Project 5: Basic Search Autocomplete',
-          description: 'Create a "Search Autocomplete" feature for a small, predefined list of words. Implement a basic linear search (or binary search if the list is sorted) to suggest matching words as the user types.',
-          checkpoint: 'Implement Binary Search on a given sorted array.',
-        }
-      ]
     },
     {
-      id: 'section-2-medium-dsa',
-      title: 'Section 2: Medium (Intermediate Structures & Algorithms)',
+      id: 'section-2-intermediate-structures',
+      title: 'Section 2: Intermediate Data Structures & Patterns',
       level: 'intermediate',
       lessons: [
         {
           id: 'dsa-lesson-6-stacks',
-          title: 'Stacks',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          title: 'Stack Data Structure & Applications',
+          duration: '90 min', 
+          markdownContent: dsaIntermediateLesson1Markdown,
         },
         {
           id: 'dsa-lesson-7-queues',
-          title: 'Queues',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          title: 'Queue Data Structure & Applications',
+          duration: '90 min', 
+          markdownContent: dsaIntermediateLesson2Markdown,
         },
         {
-          id: 'dsa-lesson-8-linked-lists',
-          title: 'Linked Lists',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-8-hash-maps-sets',
+          title: 'Hash Maps, Hash Sets & Their Use Cases',
+          duration: '120 min', 
+          markdownContent: dsaIntermediateLesson3Markdown,
         },
         {
-          id: 'dsa-lesson-9-trees',
-          title: 'Trees (Binary Trees & Binary Search Trees)',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-9-linked-lists',
+          title: 'Linked Lists: Singly, Doubly, & Circular',
+          duration: '120 min', 
+          markdownContent: dsaIntermediateLesson4Markdown,
         },
         {
-          id: 'dsa-lesson-10-recursion-backtracking',
-          title: 'Recursion & Backtracking',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-10-trees-basics',
+          title: 'Trees: Binary, BSTs & Basic Traversals',
+          duration: '150 min', 
+          markdownContent: dsaIntermediateLesson5Markdown,
         },
         {
-          id: 'dsa-lesson-11-advanced-sorting',
-          title: 'Advanced Sorting Algorithms',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
-        }
+          id: 'dsa-lesson-11-heaps-priority-queues',
+          title: 'Heaps & Priority Queues',
+          duration: '120 min', 
+          markdownContent: dsaIntermediateLesson6Markdown,
+        },
       ],
       quiz: {
-        id: 'section-2-dsa-quiz',
+        id: 'section-2-intermediate-quiz',
         title: 'Quiz: Intermediate Structures & Algorithms',
         questions: [
           {
@@ -384,241 +400,256 @@ const dsaForFrontendCourse: Course = {
           {
             id: 's2q2-dsa',
             question: 'What is the primary advantage of a Binary Search Tree (BST) over a simple Binary Tree for searching?',
-            options: ['It can store more data.', 'Its nodes have more children.', 'Its elements are always sorted.', 'It allows for O(log n) average time searching.'],
+            options: ['It can store more data.', 'Its nodes have more children.', 'Its elements are always sorted.', 'It allows for $O(\\log N)$ average time searching.'],
             correctAnswer: 3
           },
           {
             id: 's2q3-dsa',
-            question: 'Which sorting algorithm uses the "Divide and Conquer" paradigm and has a guaranteed O(n log n) worst-case time complexity?',
+            question: 'Which sorting algorithm uses the "Divide and Conquer" paradigm and has a guaranteed $O(N \\log N)$ worst-case time complexity?',
             options: ['Bubble Sort', 'Quick Sort', 'Merge Sort', 'Insertion Sort'],
             correctAnswer: 2
+          },
+          {
+            id: 's2q4-stack-real-world',
+            question: 'A browser\'s "back" button functionality is a real-world application of which data structure?',
+            options: ['Queue', 'Linked List', 'Stack', 'Hash Map'],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q5-queue-real-world',
+            question: 'Which data structure is best suited for managing tasks in a print spooler (first print job submitted, first printed)?',
+            options: ['Stack', 'Array', 'Queue', 'Hash Table'],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q6-hash-map-collision',
+            question: 'What is a "collision" in a hash table?',
+            options: ['When two different keys generate the same hash value.', 'When a key cannot be found in the table.', 'When the hash table runs out of memory.', 'When elements are inserted in sorted order.'],
+            correctAnswer: 0
+          },
+          {
+            id: 's2q7-linked-list-vs-array-insertion',
+            question: 'For frequent insertions/deletions at arbitrary positions, which data structure is generally more efficient than a dynamic array (assuming you have a reference to the insertion point)?',
+            options: ['Hash Map', 'Linked List', 'Stack', 'Queue'],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q8-bst-property',
+            question: 'In a Binary Search Tree (BST), for any given node, what is true about its left and right children?',
+            options: [
+              'All nodes in the left subtree are greater than the node, and all in the right subtree are smaller.',
+              'All nodes in the left subtree are smaller than the node, and all in the right subtree are greater.',
+              'All nodes in both subtrees are greater than the node.',
+              'The order of nodes doesn\'t matter.'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q9-bfs-data-structure',
+            question: 'Which data structure is typically used to implement Breadth-First Search (BFS) for graph or tree traversal?',
+            options: ['Stack', 'Heap', 'Queue', 'Linked List'],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q10-dfs-data-structure',
+            question: 'Which data structure is typically used to implement Depth-First Search (DFS) for graph or tree traversal (iteratively)?',
+            options: ['Queue', 'Heap', 'Stack', 'Hash Map'],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q11-heap-property',
+            question: 'In a Max Heap, what property must be true for every node with respect to its children?',
+            options: [
+              'The node\'s value must be smaller than or equal to its children\'s values.',
+              'The node\'s value must be greater than or equal to its children\'s values.',
+              'The node\'s value must be equal to its children\'s values.',
+              'The children\'s values must always be equal.'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q12-priority-queue-implementation',
+            question: 'Which data structure is commonly used to implement a Priority Queue?',
+            options: ['Array', 'Linked List', 'Heap', 'Queue'],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q13-tree-traversal-order',
+            question: 'What is the order of nodes visited in an Inorder Traversal of a Binary Search Tree (BST)?',
+            options: [
+              'Root, Left, Right',
+              'Left, Root, Right',
+              'Left, Right, Root',
+              'Right, Left, Root'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q14-cyclic-linked-list-detection',
+            question: 'Which common algorithm is used to detect a cycle in a linked list?',
+            options: [
+              'Merge Sort',
+              'Floyd\'s Cycle-Finding Algorithm (Tortoise and Hare)',
+              'Binary Search',
+              'Dijkstra\'s Algorithm'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q15-hash-map-worst-case',
+            question: 'What is the worst-case time complexity for searching an element in a hash table (e.g., due to many collisions)?',
+            options: [
+              '$O(1)$',
+              '$O(\\log N)$',
+              '$O(N)$',
+              '$O(N^2)$'
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q16-stack-balanced-parentheses',
+            question: 'A common application of stacks is to check for:',
+            options: [
+              'The sum of elements in an array.',
+              'Balanced parentheses in an expression.',
+              'The shortest path in a graph.',
+              'The median of a stream of numbers.'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q17-queue-bfs-example',
+            question: 'In a social network graph, if you want to find all friends within 2 degrees of separation, which traversal algorithm would be most suitable?',
+            options: ['Depth-First Search (DFS)', 'Breadth-First Search (BFS)', 'Topological Sort', 'Dijkstra\'s Algorithm'],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q18-tree-height',
+            question: 'What defines the "height" of a binary tree?',
+            options: [
+              'The total number of nodes in the tree.',
+              'The number of nodes along the longest path from the root to a leaf node.',
+              'The number of nodes at the lowest level.',
+              'The number of edges along the longest path from the root to a leaf node.'
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: 's2q19-hash-collision-resolution',
+            question: 'Which of the following is a common method for resolving collisions in hash tables?',
+            options: [
+              'Binary Search',
+              'Linear Probing (Open Addressing)',
+              'Merge Sort',
+              'Tree Traversal'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q20-doubly-linked-list-advantage',
+            question: 'What is a key advantage of a Doubly Linked List over a Singly Linked List?',
+            options: [
+              'It uses less memory.',
+              'It allows traversal in both forward and backward directions.',
+              'It has faster random access.',
+              'It is easier to implement.'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q21-level-order-traversal-name',
+            question: 'What is another common name for Breadth-First Traversal of a tree?',
+            options: [
+              'Preorder Traversal',
+              'Inorder Traversal',
+              'Postorder Traversal',
+              'Level Order Traversal'
+            ],
+            correctAnswer: 3
+          },
+          {
+            id: 's2q22-heap-sort-complexity',
+            question: 'What is the time complexity of Heap Sort?',
+            options: [
+              '$O(N^2)$',
+              '$O(N \\log N)$',
+              '$O(N)$',
+              '$O(\\log N)$'
+            ],
+            correctAnswer: 1
+          },
+          {
+            id: 's2q23-bst-deletion-cases',
+            question: 'When deleting a node from a Binary Search Tree (BST), which case typically requires finding the in-order predecessor or successor?',
+            options: [
+              'The node to be deleted is a leaf node.',
+              'The node to be deleted has only one child.',
+              'The node to be deleted has two children.',
+              'Deleting the root node.'
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q24-linked-list-head-node',
+            question: 'In a singly linked list, which node must you always have access to in order to traverse the entire list?',
+            options: [
+              'The tail node',
+              'Any middle node',
+              'The head node',
+              'The last visited node'
+            ],
+            correctAnswer: 2
+          },
+          {
+            id: 's2q25-tree-vs-graph',
+            question: 'What is a fundamental difference between a Tree and a Graph?',
+            options: [
+              'Trees have cycles, while graphs do not.',
+              'Trees are a type of graph that has no cycles and a single root.',
+              'Graphs are always directed, while trees are undirected.',
+              'Trees can only have 2 children per node, graphs can have unlimited.'
+            ],
+            correctAnswer: 1
           }
         ]
       },
-      projects: [
-        {
-          id: 'dsa-project-6-undo-feature',
-          title: 'Project 6: Basic Undo Feature with Stack',
-          description: 'Implement a basic "Undo" feature for a text editor using a stack to store states.',
-          checkpoint: 'Implement a basic "Undo" feature for a text editor using a stack.'
-        },
-        {
-          id: 'dsa-project-7-browser-history',
-          title: 'Project 7: Browser History Navigator',
-          description: 'Build a simple "Browser History" navigator where you can go back and forward between visited pages (represented by URLs) using two stacks.',
-          checkpoint: 'Simulate a print queue or a customer service line using a queue.'
-        },
-        {
-          id: 'dsa-project-8-download-manager',
-          title: 'Project 8: Queue-Based Download Manager',
-          description: 'Create a "Download Manager" that processes simulated download requests in the order they are added, using a queue.',
-          checkpoint: 'Implement a function to reverse a singly linked list.'
-        },
-        {
-          id: 'dsa-project-9-playlist-linked-list',
-          title: 'Project 9: Playlist with Linked List',
-          description: 'Create a simple "Playlist" where songs are nodes in a linked list, and you can add, remove, and play the next/previous song.',
-          checkpoint: 'Implement pre-order and in-order traversal for a given binary tree.'
-        },
-        {
-          id: 'dsa-project-10-simplified-dom',
-          title: 'Project 10: Simplified DOM Tree Traversal',
-          description: 'Model a simplified DOM structure using a tree data structure and implement a function to find an element by its "ID" (simulated attribute) using a traversal.',
-          checkpoint: 'Implement a function to calculate factorial or Fibonacci sequence recursively.'
-        },
-        {
-          id: 'dsa-project-11-string-permutations',
-          title: 'Project 11: String Permutations with Backtracking',
-          description: 'Write a function that generates all permutations of a given string using backtracking.',
-          checkpoint: 'Implement Merge Sort or Quick Sort on an array of numbers.'
-        },
-        {
-          id: 'dsa-project-12-custom-sorting',
-          title: 'Project 12: Custom Product Sorting',
-          description: 'For a list of products, implement a custom sorting function (e.g., sort by price, then by name) that leverages one of the advanced sorting algorithms.',
-          checkpoint: 'Identify a problem that can be efficiently solved using the Divide and Conquer paradigm.'
-        }
-      ]
     },
     {
-      id: 'section-3-advanced-dsa',
-      title: 'Section 3: Advanced (Optimization & System-Level Thinking)',
+      id: 'section-3-advanced-algorithms-patterns',
+      title: 'Section 3: Advanced Algorithms & Interview Patterns',
       level: 'advanced',
       lessons: [
         {
-          id: 'dsa-lesson-12-graphs',
-          title: 'Graphs',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-12-dynamic-programming',
+          title: 'Dynamic Programming: Memoization & Tabulation',
+          duration: '120 min', 
+          markdownContent: dsaAdvancedLesson2Markdown,
         },
         {
-          id: 'dsa-lesson-13-dynamic-programming',
-          title: 'Dynamic Programming (DP)',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-13-recursion-backtracking',
+          title: 'Advanced Recursion & Backtracking',
+          duration: '120 min', 
+          markdownContent: dsaAdvancedLesson1Markdown, 
         },
         {
-          id: 'dsa-lesson-14-advanced-trees',
-          title: 'Trees (Advanced: Heaps & Tries)',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-14-interview-patterns',
+          title: 'Common LeetCode & Interview Patterns',
+          duration: '480 min', 
+          markdownContent: dsaAdvancedLesson3Markdown, 
         },
         {
-          id: 'dsa-lesson-15-divide-conquer',
-          title: 'Divide and Conquer',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
+          id: 'dsa-lesson-15-must-solve-questions',
+          title: '75 Must-Solve LeetCode Questions for Front-End Interviews',
+          duration: '960 min', 
+          markdownContent: dsaAdvancedLesson4Markdown, 
         },
         {
-          id: 'dsa-lesson-16-greedy-algorithms',
-          title: 'Greedy Algorithms',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
-        },
-        {
-          id: 'dsa-lesson-17-advanced-string-algorithms',
-          title: 'Advanced String Algorithms',
-          duration: '60 min',
-          markdownContent: dsaBasicLesson1Markdown,
-        },
-        {
-          id: 'dsa-lesson-18-system-design-dsa',
-          title: 'System Design Thinking with DSA',
-          duration: '90 min',
-          markdownContent: dsaBasicLesson1Markdown,
-        }
-      ],
-      quiz: {
-        id: 'section-3-dsa-quiz',
-        title: 'Quiz: Advanced Optimization & System-Level Thinking',
-        questions: [
-          {
-            id: 's3q1-dsa',
-            question: 'Which graph traversal algorithm is typically used to find the shortest path in an unweighted graph?',
-            options: ['Depth-First Search (DFS)', 'Breadth-First Search (BFS)', 'Dijkstra\'s Algorithm', 'A* Search'],
-            correctAnswer: 1
-          },
-          {
-            id: 's3q2-dsa',
-            question: 'Dynamic Programming is most effective when a problem exhibits which two main properties?',
-            options: ['Greedy Choice & Optimal Substructure', 'Overlapping Subproblems & Optimal Substructure', 'Recursion & Iteration', 'Divide and Conquer & Randomization'],
-            correctAnswer: 1
-          },
-          {
-            id: 's3q3-dsa',
-            question: 'Which data structure is ideal for implementing an autocomplete search feature?',
-            options: ['Hash Map', 'Binary Search Tree', 'Heap', 'Trie'],
-            correctAnswer: 3
-          }
-        ]
-      },
-      projects: [
-        {
-          id: 'dsa-project-13-social-network-paths',
-          title: 'Project 13: Social Network Path Finder',
-          description: 'Model a simplified social network as a graph and implement BFS and DFS to find if two users are connected and to list all friends of a friend (2 degrees of separation).',
-          checkpoint: 'Implement BFS and DFS traversals for a given graph representation (adjacency list or matrix).'
-        },
-        {
-          id: 'dsa-project-14-knapsack-solver',
-          title: 'Project 14: Simple Knapsack Problem Solver',
-          description: 'Implement a dynamic programming solution for a simplified 0/1 Knapsack problem (e.g., maximizing value of items that fit into a limited capacity "cart").',
-          checkpoint: 'Solve a basic Dynamic Programming problem like the Fibonacci sequence with memoization and tabulation.'
-        },
-        {
-          id: 'dsa-project-15-priority-task-queue',
-          title: 'Project 15: Priority Task Queue with Heap',
-          description: 'Build a "Priority Task Queue" for a front-end application where tasks have different priorities, and the highest priority task is always processed next, using a Min-Heap.',
-          checkpoint: 'Implement the core operations (insert, extractMin/Max) of a Min-Heap or Max-Heap.'
-        },
-        {
-          id: 'dsa-project-16-custom-autocomplete-trie',
-          title: 'Project 16: Custom Autocomplete with Trie',
-          description: 'Implement an autocomplete feature using a Trie data structure for a list of predefined search terms.',
-          checkpoint: 'Implement a Trie and its basic operations (insert, search, startsWith).'
-        },
-        {
-          id: 'dsa-project-17-shortest-path-map',
-          title: 'Project 17: Basic Shortest Path Finder on a Grid',
-          description: 'For a simplified grid-based map (like a game board), find the shortest path between two points, illustrating a basic pathfinding algorithm (e.g., using BFS).',
-          checkpoint: 'Analyze and explain a common greedy algorithm like the Activity Selection Problem.'
-        },
-        {
-          id: 'dsa-project-18-frontend-performance-case-study',
-          title: 'Project 18: Front-End Performance Case Study with DSA Lens',
-          description: 'Choose a common front-end performance problem (e.g., large lists, frequent DOM manipulations, complex filtering) and describe how DSA concepts (e.g., virtualized lists, efficient data structures for filters, memoization for components) can be applied to optimize it.',
-          checkpoint: 'Propose and justify the choice of data structures and algorithms for a given front-end system design scenario.'
-        }
-      ]
-    },
-    {
-      id: 'section-4-interview-prep',
-      title: 'Section 4: Interview Preparation & Practice',
-      level: 'advanced', // Can be considered advanced as it builds on all previous knowledge
-      lessons: [
-        {
-          id: 'dsa-lesson-19-leetcode-patterns',
-          title: 'Common LeetCode Patterns for Front-End Interviews',
-          duration: '120 min',
-          markdownContent: '', // Placeholder, content would be dynamic or curated links
-        },
-        {
-          id: 'dsa-lesson-20-mock-interviews',
-          title: 'Mock Interview Practice & Feedback',
-          duration: '120 min',
-          markdownContent: '', // Placeholder, content would be guidance for mock interviews
+          id: 'dsa-lesson-16-company-wise-questions',
+          title: 'Company-Wise DSA Question Breakdown',
+          duration: '960 min', 
+          markdownContent: dsaAdvancedLesson5Markdown, 
         },
       ],
-      quiz: {
-        id: 'section-4-dsa-quiz',
-        title: 'Quiz: Interview Readiness Assessment',
-        questions: [
-          {
-            id: 's4q1-dsa',
-            question: 'Which data structure would you use to implement a "Least Recently Used (LRU)" cache?',
-            options: ['Array', 'Stack', 'Queue', 'Doubly Linked List and Hash Map'],
-            correctAnswer: 3
-          },
-          {
-            id: 's4q2-dsa',
-            question: 'When asked to optimize a recursive solution for performance due to repeated calculations, which technique would you consider?',
-            options: ['Backtracking', 'Greedy Algorithm', 'Dynamic Programming (Memoization)', 'Divide and Conquer'],
-            correctAnswer: 2
-          },
-          {
-            id: 's4q3-dsa',
-            question: 'For a problem involving finding all possible combinations or permutations, which algorithmic paradigm is often suitable?',
-            options: ['Greedy Algorithms', 'Dynamic Programming', 'Backtracking', 'Binary Search'],
-            correctAnswer: 2
-          }
-        ]
-      },
-      projects: [
-        {
-          id: 'dsa-project-19-leetcode-easy',
-          title: 'LeetCode Practice: Easy Problems (Arrays, Strings, Hash Maps)',
-          description: 'Solve a selection of easy LeetCode problems relevant to front-end development, focusing on arrays, strings, and hash maps.',
-          checkpoint: 'Successfully solve 3 easy LeetCode problems, explaining your thought process and complexity analysis.'
-        },
-        {
-          id: 'dsa-project-20-leetcode-medium',
-          title: 'LeetCode Practice: Medium Problems (Linked Lists, Trees, Recursion)',
-          description: 'Tackle medium-level LeetCode problems involving linked lists, trees, and recursion, commonly encountered in interviews.',
-          checkpoint: 'Successfully solve 2 medium LeetCode problems, explaining your approach and analyzing complexity.'
-        },
-        {
-          id: 'dsa-project-21-leetcode-hard',
-          title: 'LeetCode Practice: Hard Problems (Graphs, DP, Advanced Concepts)',
-          description: 'Attempt challenging LeetCode problems that require advanced data structures and algorithms like graphs and dynamic programming.',
-          checkpoint: 'Attempt at least 1 hard LeetCode problem, demonstrating an understanding of the problem\'s complexity and potential solutions.'
-        },
-        {
-          id: 'dsa-project-22-frontend-specific-interview-question',
-          title: 'Front-End Specific DSA Interview Question Simulation',
-          description: 'Work through a mock interview question that combines a DSA problem with front-end specific considerations (e.g., optimizing rendering of a large list, implementing a custom data structure for UI state).',
-          checkpoint: 'Articulate a clear solution and discuss trade-offs for a complex front-end problem using DSA principles.'
-        }
-      ]
     }
   ]
 };
